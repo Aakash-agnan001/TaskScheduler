@@ -3,14 +3,10 @@
  Authors: [Aakash Gnanakumar](https://github.com/Aakash-agnan001), [Divyank Shah](https://github.com/shahdivyank), [Alan Zhao](https://github.com/azhao036), [Marcus Hickman](https://github.com/MarcusAHickman)
  
 ## Project Description
-As college students, it is very difficult to juggle assingments, reports, classes, work, student organizations and many times we are likely to forget important deadlines and events we need to tend to. We need a tool or some method to be able to organize these tasks into an easily accessible and displayed view for us to understand various tasks at hand and the urgency we must deal with them. We want to be able to store these items into a database so that we can access them later without worry of losing our data. A task scheduler with various pieces of information including due dates, priority, duration, and the type of task will help to better organize ourselves as we attempt to balance many activites and assignments.  
+As college students, it is very difficult to juggle assingments, reports, classes, work, student organizations and many times we are likely to forget important deadlines and events we need to tend to. We need a tool or some method to be able to organize these tasks into an easily accessible and displayed view for us to understand various tasks at hand and the urgency we must deal with them. A task scheduler with various pieces of information including due dates, priority, duration, and the type of task will help to better organize ourselves as we attempt to balance many activites and assignments.  
 
 ## Technologies Used
 * C++ (Primary development language)
-* [Firebase](https://firebase.google.com)
-    * Utilize Firestore (database) to store tasks and various relevant information
-    * Interface using C++ 
-        * Create, Read, Update, Delete (CRUD)
 * [QT Creator](https://www.qt.io)
     * Utilize QT (GUI) to display current tasks
     * Interface using C++ 
