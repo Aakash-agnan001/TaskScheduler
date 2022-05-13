@@ -1,10 +1,10 @@
 #include "Description.h"
 
-Decription::Description() {
-	description = "";
+Description::Description(std::string description) {
+	this->description = description;
 }
 
-void Description::setDescription(string s) {
+void Description::setDescription(std::string s) {
 	description = s;
 }
 
