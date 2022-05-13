@@ -9,6 +9,6 @@ class Priority {
         Priority(unsigned int);
         void getPriority();
         void setPriority(unsigned int);
-}
+};
 
 #endif
