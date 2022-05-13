@@ -1,7 +1,7 @@
 #include "Description.h"
 
-Decription::Description() {
-	description = "";
+Description::Description(std::string description) {
+	this->description = description;
 }
 
 void Description::setDescription(string s) {
