@@ -12,10 +12,10 @@ class DueDate {
 		unsigned int month;
 		unsigned int year;
 	public:
-		DueDate(int day, int month, int year);
-		void setDay(int day);
-		void setMonth(int month);
-		void setYear(int year);
+		DueDate(unsigned int day, unsigned int month, unsigned int year);
+		void setDay(unsigned int day);
+		void setMonth(unsigned int month);
+		void setYear(unsigned int year);
 		string getDate();
 };
 
