@@ -5,8 +5,9 @@ class Priority {
     private:
         unsigned int priority;
     public:
+        Priority(unsigned int);
         void getPriority();
-        void setPriority();
+        void setPriority(unsigned int);
 }
 
 #endif

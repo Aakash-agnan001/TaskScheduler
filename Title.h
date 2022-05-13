@@ -7,6 +7,7 @@ class Title {
     private:
         std::string title;
     public:
+        Title(std::string);
         std::string getTitle();
         void setTitle(std::string);
 };
