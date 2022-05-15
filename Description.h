@@ -9,7 +9,7 @@ class Description {
 	private:
 		string description;
 	public:
-		Description(std::string);
+		Description(string);
 		void setDescription(string s);
 		string getDescription();
 };
