@@ -1,12 +1,10 @@
-#ifndef __DESCRIPTIONTEST_H__
-#define __DESCRIPTIONTEST_H__
+#ifndef DESCRIPTION_TESTS_H
+#define DESCRIPTION_TESTS_H
 
 #include "gtest/gtest.h"
 #include "Description.h"
 
-using namespace std;
-
-TEST(description, empty) {
+TEST(DESCRIPTION, EMPTY) {
 	Description name("");
 	EXPECT_EQ(name.getDescription(), "");
 }

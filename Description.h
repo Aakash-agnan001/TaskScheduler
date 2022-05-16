@@ -1,17 +1,15 @@
 #ifndef DESCRIPTION_H
 #define DESCRIPTION_H
-#include <iostream>
-#include <string>
 
-using namespace std;
+#include <string>
 
 class Description {
 	private:
-		string description;
+		std::string description;
 	public:
-		Description(string);
-		void setDescription(string s);
-		string getDescription();
+		Description(std::string);
+		void setDescription(std::string s);
+		std::string getDescription();
 };
 
 #endif
