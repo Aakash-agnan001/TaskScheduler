@@ -1,15 +1,13 @@
 #include "Description.h"
 
-using namespace std;
-
-Description::Description(string s) {
+Description::Description(std::string s) {
 	description = s;
 }
 
-void Description::setDescription(string s) {
+void Description::setDescription(std::string s) {
 	description = s;
 }
 
-string Description::getDescription() {
+std::string Description::getDescription() {
 	return description;
 }
