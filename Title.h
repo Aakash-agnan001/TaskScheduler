@@ -9,7 +9,7 @@ class Title {
     public:
         Title(std::string);
         std::string getTitle();
-        void setTitle(std::string);
+        void setInfo(std::string);
 };
 
 #endif
