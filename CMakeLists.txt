@@ -10,6 +10,7 @@ ADD_EXECUTABLE(test
 	  unit_test.cpp
     Description.cpp
 	Title.cpp
+	UID.cpp
     #ADD CPP FILES HERE
 )
 
