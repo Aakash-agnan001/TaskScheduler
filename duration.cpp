@@ -1,19 +1,15 @@
-#include "duration.h"
+#include "Duration.h"
 
-Duration::Duration(unsigned int hours, unsigned int minutes)
+Duration::Duration(unsigned int minutes)
 {
-	this->hours = hours;
 	this->minutes = minutes;
 }
 
-string Duration::getHours()
-{
-	string hours_string = to_string(hours);
-	return hours_string;
+void Duration::setInfo(unsigned int minutes) {
+    this->minutes = minutes;
 }
 
-string Duration::getMinutes() 
-{	string minutes_string = to_string(minutes);
-	return minutes_string;
-
+unsigned int Duration::getMinutes() 
+{	
+	return this->minutes;
 }
