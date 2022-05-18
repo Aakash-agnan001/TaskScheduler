@@ -4,6 +4,7 @@
 #include "Priority_Tests.h"
 #include "TitleTests.h"
 #include "UIDTests.h"
+#include "DurationTests.h"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
