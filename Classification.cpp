@@ -5,12 +5,12 @@ Classification::Classification()
 	classification = 0;
 }
 
-void Classification::setClassification(int clas)
+void Classification::setInfo(int clas)
 {
 	classification = clas;
 }
 
-int Classification::getClassification()
+int Classification::getInfo()
 {
 	return classification;
 }
