@@ -1,15 +1,15 @@
 #ifndef CLASSIFICATION_H
 #define CLASSIFICATION_H
 
-using namespace std;
+#include "Information.hpp"
 
-class Classification {
+class Classification : public Information {
 	private:
-	int classification;
+	unsigned int classification;
 
 	public:
-	void setClassification(int cla);
-	int getClassification();
-}
+	virtual void setInfo(unsigned int);
+	virtual unsigned int getInfo(unsigned int marker);
+};
 
 #endif
