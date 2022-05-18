@@ -7,5 +7,17 @@ CMakeCache.txt
 Makefile
 lib/
 
+#QMAKE Files
+scheduler.app
+scheduler.app/
+.qmake.stash
+main.o
+mainwindow.o
+moc_mainwindow.cpp
+moc_mainwindow.o
+moc_predefs.h
+number.o
+ui_mainwindow.h
+
 #Executables
 unit_tests
