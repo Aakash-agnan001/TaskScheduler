@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "Description_Tests.h"
+#include "Priority_Tests.h"
 #include "TitleTests.h"
 #include "UIDTests.h"
 
