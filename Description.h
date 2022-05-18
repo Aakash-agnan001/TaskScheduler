@@ -2,6 +2,7 @@
 #define DESCRIPTION_H
 
 #include <string>
+#include "Information.hpp"
 
 class Description : public Information {
 	private:
@@ -9,7 +10,7 @@ class Description : public Information {
 	public:
 		Description(std::string);
 		virtual void setInfo(std::string s);
-		virtual std::string getInfo();
+		virtual std::string getInfo(std::string);
 };
 
 #endif

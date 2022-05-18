@@ -8,6 +8,6 @@ void Description::setInfo(std::string s) {
 	description = s;
 }
 
-std::string Description::getInfo() {
+std::string Description::getInfo(std::string marker) {
 	return description;
 }
