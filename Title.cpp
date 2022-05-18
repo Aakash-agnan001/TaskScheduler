@@ -4,10 +4,10 @@ Title::Title(std::string title) {
     this->title = title;
 }
 
-std::string Title::getTitle() {
+std::string Title::getInfo(std::string marker) {
     return this->title;
 }
 
-void Title::setTitle(std::string title) {
+void Title::setInfo(std::string title) {
     this->title = title;
 }
