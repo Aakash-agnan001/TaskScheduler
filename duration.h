@@ -11,7 +11,7 @@ private:
 public:
     Duration(unsigned minutes);
     virtual void setInfo(unsigned int);
-    virtual unsigned int getInfo(unsigned);
+    virtual unsigned int getInfo(unsigned int);
 };
 
 #endif
