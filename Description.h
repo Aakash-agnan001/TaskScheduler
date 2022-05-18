@@ -3,13 +3,13 @@
 
 #include <string>
 
-class Description {
+class Description : public Information {
 	private:
 		std::string description;
 	public:
 		Description(std::string);
-		void setDescription(std::string s);
-		std::string getDescription();
+		virtual void setInfo(std::string s);
+		virtual std::string getInfo();
 };
 
 #endif
