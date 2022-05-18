@@ -7,7 +7,7 @@ class Priority {
     public:
 	Priority();
         Priority(unsigned int);
-        void getPriority();
+        unsigned int getPriority();
         void setPriority(unsigned int);
 };
 
