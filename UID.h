@@ -10,9 +10,9 @@ class UID {
 	string id;
 	
 	public:
-	UID();
-	void setID(string ident);
-	string getID();
-}
+	UID(string);
+	void setInfo(string ident);
+	string getInfo();
+};
 
 #endif 
