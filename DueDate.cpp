@@ -28,7 +28,7 @@ void DueDate::setInfo(unsigned int date)
     this->year = stoi(year_str);
 }
 
-unsigned int DueDate::getInfo()
+unsigned int DueDate::getInfo(unsigned int marker)
 {
     int month = this->month;
     std::string month_str = std::to_string(month);
@@ -41,6 +41,6 @@ unsigned int DueDate::getInfo()
 
     std::string date_str = month_str + date_str + year_str;
     int date = stoi(date_str);
-    _
+    
     return date;
 }
