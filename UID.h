@@ -2,17 +2,17 @@
 #define UID_H
 
 #include <string>
+#include "Information.hpp"
 
-using namespace std;
+class UID : public Information
+{
+private:
+    std::string id;
 
-class UID {
-	private:
-	string id;
-	
-	public:
-	UID(string);
-	void setInfo(string ident);
-	string getInfo();
+public:
+    UID(std::string);
+    void setInfo(std::string);
+    std::string getInfo(std::string);
 };
 
-#endif 
+#endif
