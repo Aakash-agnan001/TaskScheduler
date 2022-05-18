@@ -1,14 +1,16 @@
 #ifndef PRIORITY_H
 #define PRIORITY_H
 
-class Priority {
+#include "Information.hpp"
+
+class Priority : public Information {
     private:
         unsigned int priority;
     public:
 	Priority();
         Priority(unsigned int);
-        void getPriority();
-        void setPriority(unsigned int);
+        virtual void getPriority();
+        virtual void setPriority(unsigned int);
 };
 
 #endif
