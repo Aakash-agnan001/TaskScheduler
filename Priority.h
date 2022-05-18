@@ -7,8 +7,8 @@ class Priority {
     public:
 	Priority();
         Priority(unsigned int);
-        unsigned int getPriority();
-        void setPriority(unsigned int);
+        unsigned int getInfo();
+        void setInfo(unsigned int);
 };
 
 #endif
