@@ -1,16 +1,16 @@
 #include "UID.h"
 
-UID::UID()
+UID::UID(std::string user)
 {
-	id = "0";
+	id = user;
 }
 
-void UID::setID(string ident)
+void UID::setInfo(std::string ident)
 {
 	id = ident;
 }
 
-string UID::getID()
+std::string UID::getInfo(std::string marker)
 {
 	return id;
 }

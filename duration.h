@@ -1,20 +1,17 @@
 #ifndef DURATION_H
 #define DURATION_H
 
-#include <iostream>
-#include <string>
+#include "Information.hpp"
 
-using namespace std;
-
-class Duration 
+class Duration : public Information
 {
-	private:
-		unsigned int hours;
-		unsigned int minutes;
-	public:
-		Duration(unsigned int hours, unsigned minutes);
-		string getHours();
-		string getMinutes();
+private:
+    unsigned int minutes;
+
+public:
+    Duration(unsigned minutes);
+    virtual void setInfo(unsigned int);
+    virtual unsigned int getInfo(unsigned int);
 };
 
 #endif
