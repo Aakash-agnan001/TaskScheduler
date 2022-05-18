@@ -6,18 +6,18 @@
 
 TEST(PRIORITY, DefConstruct) {
      Priority test_prio = Priority();
-     EXPECT_EQ(test_prio.getPriority(), 0);
+     EXPECT_EQ(test_prio.getInfo(), 0);
 }
 
 TEST(PRIORITY, PassRegParam) {
     Priority test_prio = Priority(5);
-    EXPECT_EQ(test_prio.getPriority(), 5);  
+    EXPECT_EQ(test_prio.getInfo(), 5);  
 }
 
 TEST(PRIORITY, TestSetPrio) {
     Priority test_prio = Priority();
-    test_prio.setPriority(5);
-    EXPECT_EQ(test_prio.getPriority(), 5);
+    test_prio.setInfo(5);
+    EXPECT_EQ(test_prio.getInfo(), 5);
 }
 
 #endif
