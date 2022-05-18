@@ -6,18 +6,18 @@
 
 TEST(CLASS, DefConstruct) {
     Classification test_class = Classification(); 
-    EXPECT_EQ(test_class.GetClassification(), 0);
+    EXPECT_EQ(test_class.GetInfo(), 0);
 }
 
 TEST(CLASS, PassRegParam) {
     Classification test_class = Classification(4);
-    EXPECT_EQ(test_class.GetClassification(), 4);
+    EXPECT_EQ(test_class.GetInfo(), 4);
 }
 
 TEST(Class, TestSetClass) {
     Classification test_class = Classification();
-    test_class.SetClassification(4);
-    EXPECT_EQ(test_class.GetClassification(), 4);
+    test_class.SetInfo(4);
+    EXPECT_EQ(test_class.GetInfo(), 4);
 }
 
 #endif
