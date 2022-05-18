@@ -11,6 +11,8 @@ ADD_EXECUTABLE(test
     Description.cpp
 	Title.cpp
 	UID.cpp
+	Classification.cpp
+	Priority.cpp
     #ADD CPP FILES HERE
 )
 
