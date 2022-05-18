@@ -1,7 +1,7 @@
 #ifndef DURATION_H
 #define DURATION_H
 
-#include "Information.h"
+#include "Information.hpp"
 
 class Duration : public Information
 {
@@ -11,7 +11,7 @@ private:
 public:
     Duration(unsigned minutes);
     virtual void setInfo(unsigned int);
-    virtual unsigned int getInfo();
+    virtual unsigned int getInfo(unsigned);
 };
 
 #endif
