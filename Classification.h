@@ -3,13 +3,15 @@
 
 using namespace std;
 
-class Classification {
+#include "Information.hpp"
+
+class Classification : public Information {
 	private:
 	int classification;
 
 	public:
-	void setClassification(int cla);
-	int getClassification();
+	virtual void setInfo(int cla);
+	virtual int getInfo();
 }
 
 #endif
