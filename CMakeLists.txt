@@ -15,7 +15,6 @@ ADD_EXECUTABLE(unit_tests
 	UID.cpp
     Priority.cpp
     Duration.cpp
-    UID.cpp
     DueDate.cpp 
 )
 
