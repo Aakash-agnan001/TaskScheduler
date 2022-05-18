@@ -6,14 +6,19 @@ ADD_SUBDIRECTORY(googletest)
 
 SET(CMAKE_CXX_STANDARD 11)
 
-ADD_EXECUTABLE(test
-	  unit_test.cpp
+ADD_EXECUTABLE(unit_tests
+    #ADD CPP FILES HERE 
+	unit_test.cpp
+    Classification.cpp
     Description.cpp
 	Title.cpp
 	UID.cpp
-    #ADD CPP FILES HERE
+    Priority.cpp
+    Duration.cpp
+    UID.cpp
+    DueDate.cpp 
 )
 
-TARGET_LINK_LIBRARIES(test gtest)
+TARGET_LINK_LIBRARIES(unit_tests gtest)
 
-TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+TARGET_COMPILE_DEFINITIONS(unit_tests PRIVATE gtest_disable_pthreads=ON)

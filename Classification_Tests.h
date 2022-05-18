@@ -1,23 +1,29 @@
-#ifndef __CLASSIFICATION_TESTS_H__
-#define __CLASSIFICATION_TESTS_H__
+#ifndef CLASSIFICATION_TESTS_H
+#define CLASSIFICATION_TESTS_H
 
 #include "gtest/gtest.h"
 #include "Classification.h"
 
-TEST(CLASS, DefConstruct) {
-    Classification test_class = Classification(); 
-    EXPECT_EQ(test_class.GetInfo(), 0);
+TEST(Classification, DefConstruct)
+{
+    Information *test_class = new Classification();
+    EXPECT_EQ(test_class->getInfo(0), 0);
+    delete test_class;
 }
 
-TEST(CLASS, PassRegParam) {
-    Classification test_class = Classification(4);
-    EXPECT_EQ(test_class.GetInfo(), 4);
+TEST(Classification, PassRegParam)
+{
+    Information *test_class = new Classification(4);
+    EXPECT_EQ(test_class->getInfo(0), 4);
+    delete test_class;
 }
 
-TEST(Class, TestSetClass) {
-    Classification test_class = Classification();
-    test_class.SetInfo(4);
-    EXPECT_EQ(test_class.GetInfo(), 4);
+TEST(Classification, TestSetClass)
+{
+    Information *test_class = new Classification(1);
+    test_class->setInfo(4);
+    EXPECT_EQ(test_class->getInfo(0), 4);
+    delete test_class;
 }
 
 #endif

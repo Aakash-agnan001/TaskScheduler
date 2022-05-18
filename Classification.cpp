@@ -2,16 +2,21 @@
 
 Classification::Classification()
 {
-	classification = 0;
+	this->classification = 0;
 }
 
-void Classification::setInfo(unsigned int clas)
+Classification::Classification(unsigned classification)
 {
-	classification = clas;
+	this->classification = classification;
 }
 
-unsigned int Classification::getInfo(unsigned int marker)
+void Classification::setInfo(unsigned clas)
 {
-	return classification;
+	this->classification = clas;
+}
+
+unsigned int Classification::getInfo(unsigned marker)
+{
+	return this->classification;
 }
 

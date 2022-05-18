@@ -9,6 +9,7 @@ class Information {
         virtual void setInfo(std::string) = 0;
         virtual unsigned getInfo(unsigned) = 0;
         virtual std::string getInfo(std::string) = 0;
+        virtual ~Information() = default;
 };
 
 #endif

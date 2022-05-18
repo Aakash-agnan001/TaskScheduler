@@ -11,8 +11,11 @@ private:
 
 public:
     UID(std::string);
-    void setInfo(std::string);
-    std::string getInfo(std::string);
+    virtual void setInfo(std::string);
+    virtual std::string getInfo(std::string);
+
+    virtual void setInfo(unsigned int) {};
+    virtual unsigned int getInfo(unsigned int) {return 0;};
 };
 
 #endif

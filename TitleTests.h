@@ -6,15 +6,17 @@
 
 TEST(TITLE, constructor)
 {
-	Title test("work");
-	EXPECT_EQ(test.getTitle(), "work");
+	Information* test = new Title("work");
+	EXPECT_EQ(test->getInfo(""), "work");
+    delete test;
 }
 
 TEST(TITLE, setInfo)
 {
-	Title test("");
-	test.setInfo("work");
-	EXPECT_EQ(test.getTitle(), "work");
+	Information* test = new Title("");
+	test->setInfo("work");
+	EXPECT_EQ(test->getInfo(""), "work");
+    delete test;
 }
 
 #endif

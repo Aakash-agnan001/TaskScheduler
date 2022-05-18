@@ -2,6 +2,7 @@
 #define PRIORITY_H
 
 #include "Information.hpp"
+#include <string>
 
 class Priority : public Information
 {
@@ -11,8 +12,11 @@ private:
 public:
     Priority();
     Priority(unsigned int);
-    unsigned int getInfo(unsigned int);
-    void setInfo(unsigned int);
+    virtual unsigned int getInfo(unsigned int);
+    virtual void setInfo(unsigned int);
+
+    virtual std::string getInfo(std::string) {return "";};
+    virtual void setInfo(std::string) {};
 };
 
 #endif

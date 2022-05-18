@@ -9,7 +9,10 @@ class Description : public Information {
 		std::string description;
 	public:
 		Description(std::string);
-		virtual void setInfo(std::string s);
+        virtual void setInfo(unsigned int) {};
+        virtual unsigned int getInfo(unsigned int) {return 0;};
+
+		virtual void setInfo(std::string);
 		virtual std::string getInfo(std::string);
 };
 

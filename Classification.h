@@ -2,14 +2,20 @@
 #define CLASSIFICATION_H
 
 #include "Information.hpp"
+#include <string>
 
 class Classification : public Information {
 	private:
-	unsigned int classification;
+	unsigned classification;
 
 	public:
-	virtual void setInfo(unsigned int);
-	virtual unsigned int getInfo(unsigned int marker);
+    Classification();
+    Classification(unsigned);
+	virtual void setInfo(unsigned);
+	virtual unsigned getInfo(unsigned marker);
+
+    virtual void setInfo(std::string) {};
+    virtual std::string getInfo(std::string) {return "";};
 };
 
 #endif

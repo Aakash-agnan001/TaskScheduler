@@ -6,15 +6,17 @@
 
 TEST(UID, constructor)
 {
-	UID test("test");
-	EXPECT_EQ(test.getInfo(), "test");
+	Information* test = new UID("test");
+	EXPECT_EQ(test->getInfo(""), "test");
+    delete test;
 }
 
 TEST(UID, setInfo)
 {
-	UID test("");
-	test.setInfo("test");
-	EXPECT_EQ(test.getInfo(), "test");
+	Information* test = new UID("");
+	test->setInfo("test");
+	EXPECT_EQ(test->getInfo(""), "test");
+    delete test;
 }
 
 #endif 
