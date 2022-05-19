@@ -11,6 +11,7 @@
 
 class Task {
 	public:
+        Task();
 		UID uid;
 		Title title;
 		DueDate date;
