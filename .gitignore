@@ -20,5 +20,14 @@ moc_predefs.h
 number.o
 ui_mainwindow.h
 
+#QMAKE .o Files
+Classification.o
+Description.o
+DueDate.o
+Duration.o
+Priority.o
+Title.o
+UID.o
+
 #Executables
 unit_tests

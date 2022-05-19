@@ -9,25 +9,25 @@ CONFIG += sdk_no_version_check
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Classification.cpp \
-    Description.cpp \
-    DueDate.cpp \
-    Duration.cpp \
-    Priority.cpp \
-    Title.cpp \
-    UID.cpp \
+    ./Sources/Classification.cpp \
+    ./Sources/Description.cpp \
+    ./Sources/DueDate.cpp \
+    ./Sources/Duration.cpp \
+    ./Sources/Priority.cpp \
+    ./Sources/Title.cpp \
+    ./Sources/UID.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    Information.hpp \
-    Headers/Classification.h \
-    Description.h \
-    DueDate.h \
-    Duration.h \
-    Priority.h \
-    Title.h \
-    UID.h \
+    ./Headers/Information.hpp \
+    ./Headers/Classification.h \
+    ./Headers/Description.h \
+    ./Headers/DueDate.h \
+    ./Headers/Duration.h \
+    ./Headers/Priority.h \
+    ./Headers/Title.h \
+    ./Headers/UID.h \
     mainwindow.h
 
 FORMS += \
