@@ -2,7 +2,7 @@
 #define CLASSIFICATION_TESTS_H
 
 #include "gtest/gtest.h"
-#include "Classification.h"
+#include "../Headers/Classification.h"
 
 TEST(Classification, DefConstruct)
 {

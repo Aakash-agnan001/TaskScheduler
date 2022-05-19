@@ -2,7 +2,7 @@
 #define __PRIORITY_TESTS_H__
 
 #include "gtest/gtest.h"
-#include "Priority.h"
+#include "../Headers/Priority.h"
 
 TEST(PRIORITY, DefConstruct)
 {

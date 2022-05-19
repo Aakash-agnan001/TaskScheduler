@@ -2,7 +2,7 @@
 #define DUEDATETESTS_H
 
 #include "gtest/gtest.h"
-#include "DueDate.h"
+#include "../Headers/DueDate.h"
 
 TEST(DUEDATE, May18th)
 {

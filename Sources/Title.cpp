@@ -1,4 +1,4 @@
-#include "Title.h"
+#include "../Headers/Title.h"
 
 Title::Title(std::string title) {
     this->title = title;

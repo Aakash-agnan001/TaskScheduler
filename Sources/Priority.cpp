@@ -1,4 +1,4 @@
-#include "Priority.h"
+#include "../Headers/Priority.h"
 
 Priority::Priority() {
 	this->priority = 0;
