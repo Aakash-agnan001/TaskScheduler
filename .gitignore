@@ -10,6 +10,7 @@ lib/
 #QMAKE Files
 scheduler.app
 scheduler.app/
+scheduler.pro.user
 .qmake.stash
 main.o
 mainwindow.o

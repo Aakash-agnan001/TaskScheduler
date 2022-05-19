@@ -5,13 +5,16 @@
 
 class DueDate : public Information{
 	private:
-		unsigned int day;
-		unsigned int month;
-		unsigned int year;
+		std::string day;
+		std::string month;
+		std::string year;
 	public:
-		DueDate(unsigned int date);
-        virtual void setInfo(unsigned int date);
-        virtual unsigned int getInfo(unsigned int);
+		DueDate(std::string);
+        virtual void setInfo(unsigned int) {};
+        virtual unsigned int getInfo(unsigned int) {return 0;};
+
+        virtual void setInfo(std::string);
+        virtual std::string getInfo(std::string);
 		
 };
 
