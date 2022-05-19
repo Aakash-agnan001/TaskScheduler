@@ -4,8 +4,10 @@
 #include "Priority_Tests.h"
 #include "TitleTests.h"
 #include "UIDTests.h"
+#include "DurationTests.h"
 
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+int main(int argc, char **argv)
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
