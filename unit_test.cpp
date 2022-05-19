@@ -5,6 +5,7 @@
 #include "TitleTests.h"
 #include "UIDTests.h"
 #include "DurationTests.h"
+#include "DueDateTests.h"
 
 int main(int argc, char **argv)
 {
