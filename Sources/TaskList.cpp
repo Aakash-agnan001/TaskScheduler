@@ -32,23 +32,23 @@ void TaskList::deleteTask(std::string title)
     {
         if ((*ptr).title.getInfo("") == title)
         {
-
+            std::advance(ptr, count);
+            tasks.erase(ptr);
+            this->size--;
             break;
         }
         ++count;
     }
-    std::advance(ptr, count);
-    tasks.erase(ptr);
-    this->size--;
 }
 
-Task TaskList::getTask(std::string title)
+Task* TaskList::getTask(std::string title)
 {
     for (std::list<Task>::iterator ptr = this->tasks.begin(); ptr != this->tasks.end(); ++ptr)
     {
         if ((*ptr).title.getInfo("") == title)
         {
-            return *ptr;
+            return &(*ptr);
         }
     }
+    return nullptr;
 }
