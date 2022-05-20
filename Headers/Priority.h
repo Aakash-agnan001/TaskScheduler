@@ -10,13 +10,13 @@ private:
     unsigned int priority;
 
 public:
-    Priority();
+    Priority() {this->priority = 1;};
     Priority(unsigned int);
     virtual unsigned int getInfo(unsigned int);
     virtual void setInfo(unsigned int);
 
-    virtual std::string getInfo(std::string) {return "";};
-    virtual void setInfo(std::string) {};
+    virtual std::string getInfo(std::string) { return ""; };
+    virtual void setInfo(std::string){};
 };
 
 #endif

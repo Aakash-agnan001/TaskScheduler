@@ -10,12 +10,13 @@ private:
     std::string title;
 
 public:
+    Title(){this->title = "";};
     Title(std::string);
     std::string getInfo(std::string);
     void setInfo(std::string);
 
-    unsigned int getInfo(unsigned int) {return 0;};
-    void setInfo(unsigned int) {};
+    unsigned int getInfo(unsigned int) { return 0; };
+    void setInfo(unsigned int){};
 };
 
 #endif

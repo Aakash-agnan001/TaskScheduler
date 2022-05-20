@@ -11,7 +11,16 @@
 
 class Task {
 	public:
-        Task();
+        Task() {
+            uid = UID();
+            title = Title();
+            date = DueDate();
+            description = Description();
+            classification = Classification();
+            duration = Duration();
+            priority = Priority();
+        };
+    public:
 		UID uid;
 		Title title;
 		DueDate date;

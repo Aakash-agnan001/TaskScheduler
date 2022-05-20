@@ -16,6 +16,7 @@ ADD_EXECUTABLE(unit_tests
     ./Sources/Priority.cpp
     ./Sources/Duration.cpp
     ./Sources/DueDate.cpp 
+    ./Sources/TaskList.cpp
 )
 
 TARGET_LINK_LIBRARIES(unit_tests gtest)
