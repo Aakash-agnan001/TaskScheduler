@@ -1,4 +1,4 @@
-#include "Duration.h"
+#include "../Headers/Duration.h"
 
 Duration::Duration(unsigned int minutes)
 {

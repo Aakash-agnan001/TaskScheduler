@@ -1,9 +1,4 @@
-#include "Classification.h"
-
-Classification::Classification()
-{
-	this->classification = 0;
-}
+#include "../Headers/Classification.h"
 
 Classification::Classification(unsigned classification)
 {

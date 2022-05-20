@@ -2,12 +2,12 @@
 #define __PRIORITY_TESTS_H__
 
 #include "gtest/gtest.h"
-#include "Priority.h"
+#include "../Headers/Priority.h"
 
 TEST(PRIORITY, DefConstruct)
 {
     Information *test_prio = new Priority();
-    EXPECT_EQ(test_prio->getInfo(0), 0);
+    EXPECT_EQ(test_prio->getInfo(0), 1);
     delete test_prio;
 }
 

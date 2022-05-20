@@ -9,8 +9,18 @@
 #include "Duration.h"
 #include "DueDate.h"
 
-Class Task {
+class Task {
 	public:
+        Task() {
+            uid = UID();
+            title = Title();
+            date = DueDate();
+            description = Description();
+            classification = Classification();
+            duration = Duration();
+            priority = Priority();
+        };
+    public:
 		UID uid;
 		Title title;
 		DueDate date;
@@ -19,3 +29,5 @@ Class Task {
 		Duration duration;
 		Priority priority;
 };
+
+#endif

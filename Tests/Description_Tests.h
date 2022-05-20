@@ -2,8 +2,7 @@
 #define DESCRIPTION_TESTS_H
 
 #include "gtest/gtest.h"
-#include "Description.h"
-#include "Information.hpp"
+#include "../Headers/Description.h"
 
 TEST(DESCRIPTION, EMPTY) {
 	Information* name = new Description("");

@@ -9,6 +9,7 @@ private:
     unsigned int minutes;
 
 public:
+    Duration(){ this->minutes = 1;};
     Duration(unsigned minutes);
     virtual void setInfo(unsigned int);
     virtual unsigned int getInfo(unsigned int);

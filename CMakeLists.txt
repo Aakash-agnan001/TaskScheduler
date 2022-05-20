@@ -8,14 +8,15 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(unit_tests
     #ADD CPP FILES HERE 
-	unit_test.cpp
-    Classification.cpp
-    Description.cpp
-	Title.cpp
-	UID.cpp
-    Priority.cpp
-    Duration.cpp
-    DueDate.cpp 
+	./Tests/unit_test.cpp
+    ./Sources/Classification.cpp
+    ./Sources/Description.cpp
+	./Sources/Title.cpp
+	./Sources/UID.cpp
+    ./Sources/Priority.cpp
+    ./Sources/Duration.cpp
+    ./Sources/DueDate.cpp 
+    ./Sources/TaskList.cpp
 )
 
 TARGET_LINK_LIBRARIES(unit_tests gtest)

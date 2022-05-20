@@ -2,7 +2,7 @@
 #define DURATIONTESTS_H
 
 #include "gtest/gtest.h"
-#include "Duration.h"
+#include "../Headers/Duration.h"
 
 TEST(DURATION, Zero)
 {

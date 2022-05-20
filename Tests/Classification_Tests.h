@@ -2,12 +2,12 @@
 #define CLASSIFICATION_TESTS_H
 
 #include "gtest/gtest.h"
-#include "Classification.h"
+#include "../Headers/Classification.h"
 
 TEST(Classification, DefConstruct)
 {
     Information *test_class = new Classification();
-    EXPECT_EQ(test_class->getInfo(0), 0);
+    EXPECT_EQ(test_class->getInfo(0), 1);
     delete test_class;
 }
 

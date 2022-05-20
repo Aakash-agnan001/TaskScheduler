@@ -2,7 +2,7 @@
 #define TITLETESTS_H
 
 #include "gtest/gtest.h"
-#include "Title.h"
+#include "../Headers/Title.h"
 
 TEST(TITLE, constructor)
 {
