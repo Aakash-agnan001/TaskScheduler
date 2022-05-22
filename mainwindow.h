@@ -15,13 +15,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-    void on_increase_clicked();
-
 private:
     Ui::MainWindow *ui;
 
-private:
-    int number = 50;
 };
 #endif // MAINWINDOW_H

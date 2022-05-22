@@ -6,20 +6,150 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1271</width>
-    <height>725</height>
+    <width>1303</width>
+    <height>759</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="addTask">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>70</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ADD TASK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteTask">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>200</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DELETE TASK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="getTask">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>290</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GET TASK</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="getTaskInput">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>270</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="deleteTaskInput">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>180</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="addTaskInputTitle">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>50</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="addTaskInputDescription">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>50</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="addTaskInputClassification">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>50</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="addTaskInputPriority">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>50</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="addTaskInputDuration">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>50</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="addTaskInputDuedate">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>50</y>
+      <width>151</width>
+      <height>74</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="tasklist">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>430</y>
+      <width>1201</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1271</width>
+     <width>1303</width>
      <height>24</height>
     </rect>
    </property>
