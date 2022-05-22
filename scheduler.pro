@@ -16,6 +16,7 @@ SOURCES += \
     ./Sources/Priority.cpp \
     ./Sources/Title.cpp \
     ./Sources/UID.cpp \
+    ./Sources/TaskList.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -28,6 +29,8 @@ HEADERS += \
     ./Headers/Priority.h \
     ./Headers/Title.h \
     ./Headers/UID.h \
+    ./Headers/TaskList.h \
+    ./Headers/Task.h \
     mainwindow.h
 
 FORMS += \
