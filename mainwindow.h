@@ -19,6 +19,8 @@ public:
 private slots:
     void on_addTask_clicked();
 
+    void on_deleteTask_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -28,5 +30,7 @@ private:
     QTextEdit taskPriority;
     QTextEdit taskDate;
     QTextEdit taskDuration;
+
+    QTextEdit deleteTitle;
 };
 #endif // MAINWINDOW_H
