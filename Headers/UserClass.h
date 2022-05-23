@@ -9,6 +9,6 @@ class UserClass {
 	std::string lastName;
 	std::string password;
 	TaskList tasks;
-}
+};
 
 #endif
