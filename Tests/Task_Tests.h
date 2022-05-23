@@ -7,43 +7,43 @@
 TEST(Task, defConstructUID)
 {
 	Task sampleTask;
-	EXPECT_EQ(sampleTask.uid.getInfo(), "");	
+	EXPECT_EQ(sampleTask.uid.getInfo(""), "");	
 }
 
 TEST(Task, defConstructTitle)
 {
 	Task sampleTask;
-	EXPECT_EQ(sampleTask.title.getInfo(), ""); 
+	EXPECT_EQ(sampleTask.title.getInfo(""), ""); 
 }
 
 TEST(Task, defConstructDueDate)
 {
 	Task sampleTask;
-	EXPECT_EQ(sampleTask.date.getInfo(),0 );
+	EXPECT_EQ(sampleTask.date.getInfo(""), "00000000");
 }
 
 TEST(Task, defConstructDescription)
 {
 	Task sampleTask;
-	EXPECT_EQ(sampleTask.description.getInfo(), "");
+	EXPECT_EQ(sampleTask.description.getInfo(""), "");
 }
 
 TEST(Task, defConstructClassification)
 {
 	Task sampleTask;
-	EXPECT_EQ(sampleTask.classifaction.getInfo(), 1);
+	EXPECT_EQ(sampleTask.classification.getInfo(1), 1);
 }
 
 TEST(Task, defConstructDuration)
 {
 	Task sampleTask;
-	EXPECT_EQ(sampleTask.duration.getInfo(), 1);
+	EXPECT_EQ(sampleTask.duration.getInfo(1), 1);
 }
 
 TEST(Task, defConstructPriority)
 {
-	Task sampleTask:
-	EXPECT_EQ(sampleTask.priority.getInfo(), 1);
+	Task sampleTask;
+	EXPECT_EQ(sampleTask.priority.getInfo(1), 1);
 }
 
 #endif
