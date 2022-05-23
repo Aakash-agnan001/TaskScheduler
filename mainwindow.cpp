@@ -25,3 +25,10 @@ void MainWindow::on_addTask_clicked()
     inputTask.addTask(taskTitle.toPlainText().toStdString(), taskDescription.toPlainText().toStdString(), taskClassification.toPlainText().toInt(), taskPriority.toPlainText().toInt(), taskDate.toPlainText().toStdString(), taskDuration.toPlainText().toInt());
 }
 
+
+void MainWindow::on_deleteTask_clicked()
+{
+    TaskList dltTask;
+    dltTask.deleteTask(deleteTitle.toPlainText().toStdString());
+}
+
