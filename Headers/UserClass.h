@@ -5,9 +5,9 @@
 
 class UserClass {
 	private:
-	string firstName;
-	string lastName;
-	string password;
+	std::string firstName;
+	std::string lastName;
+	std::string password;
 	TaskList tasks;
 }
 
