@@ -32,3 +32,12 @@ void MainWindow::on_deleteTask_clicked()
     dltTask.deleteTask(deleteTitle.toPlainText().toStdString());
 }
 
+
+void MainWindow::on_getTask_clicked()
+{
+    TaskList findTask;
+    // storing getTask inside a Task Pointer so that it can be displayed later on
+    //implementation of that will be done later on
+    Task* get_the_task = findTask.getTask(getTitle.toPlainText().toStdString());
+}
+
