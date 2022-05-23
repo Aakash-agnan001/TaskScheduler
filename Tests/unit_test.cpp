@@ -6,6 +6,7 @@
 #include "UIDTests.h"
 #include "DurationTests.h"
 #include "DueDateTests.h"
+#include "TaskList_Tests.h"
 
 int main(int argc, char **argv)
 {
