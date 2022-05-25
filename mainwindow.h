@@ -26,15 +26,5 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    QTextEdit taskTitle;
-    QTextEdit taskDescription;
-    QTextEdit taskClassification;
-    QTextEdit taskPriority;
-    QTextEdit taskDate;
-    QTextEdit taskDuration;
-
-    QTextEdit deleteTitle;
-
-    QTextEdit getTitle;
 };
 #endif // MAINWINDOW_H
