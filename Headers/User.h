@@ -1,9 +1,9 @@
-#ifndef USERCLASS_H
-#define USERCLASS_H
+#ifndef USER_H
+#define USER_H
 
 #include "TaskList.h"
 
-class UserClass {
+class User {
 	public:
 	TaskList tasks;
 	void setPassword(std::string pw) {
