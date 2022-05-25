@@ -28,6 +28,9 @@ class User {
 		tempString = tempString + this->lastName;
 		return tempString;
 	}
+	TaskList getTaskList() {
+		return this->tasks;	
+	}
 	private:
 	std::string firstName;
 	std::string lastName;
