@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1303</width>
-    <height>759</height>
+    <width>1349</width>
+    <height>925</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -20,8 +20,8 @@
    <widget class="QPushButton" name="addTask">
     <property name="geometry">
      <rect>
-      <x>1010</x>
-      <y>190</y>
+      <x>1230</x>
+      <y>130</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -33,8 +33,8 @@
    <widget class="QPushButton" name="deleteTask">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>280</y>
+      <x>590</x>
+      <y>250</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -46,8 +46,8 @@
    <widget class="QPushButton" name="getTask">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>380</y>
+      <x>1000</x>
+      <y>250</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -59,8 +59,8 @@
    <widget class="QTextEdit" name="getTaskInput">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>360</y>
+      <x>830</x>
+      <y>230</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -72,8 +72,8 @@
    <widget class="QTextEdit" name="deleteTaskInput">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>270</y>
+      <x>420</x>
+      <y>230</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -85,8 +85,8 @@
    <widget class="QTextEdit" name="addTaskInputTitle">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>170</y>
+      <x>100</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -98,8 +98,8 @@
    <widget class="QTextEdit" name="addTaskInputDescription">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>170</y>
+      <x>290</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -111,8 +111,8 @@
    <widget class="QTextEdit" name="addTaskInputClassification">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>170</y>
+      <x>480</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -124,8 +124,8 @@
    <widget class="QTextEdit" name="addTaskInputPriority">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>170</y>
+      <x>670</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -137,8 +137,8 @@
    <widget class="QTextEdit" name="addTaskInputDuration">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>170</y>
+      <x>860</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -150,8 +150,8 @@
    <widget class="QTextEdit" name="addTaskInputDuedate">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>170</y>
+      <x>1050</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
@@ -163,18 +163,18 @@
    <widget class="QListWidget" name="tasklist">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>520</y>
-      <width>1201</width>
-      <height>192</height>
+      <x>90</x>
+      <y>330</y>
+      <width>1251</width>
+      <height>501</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="WolcomeLabel">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>40</y>
+      <x>560</x>
+      <y>20</y>
       <width>361</width>
       <height>61</height>
      </rect>
@@ -187,6 +187,9 @@
     <property name="text">
      <string>Your Task Scheduler</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -194,7 +197,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1303</width>
+     <width>1349</width>
      <height>22</height>
     </rect>
    </property>
