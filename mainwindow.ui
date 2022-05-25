@@ -10,6 +10,9 @@
     <height>759</height>
    </rect>
   </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -17,8 +20,8 @@
    <widget class="QPushButton" name="addTask">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>70</y>
+      <x>1010</x>
+      <y>190</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -31,7 +34,7 @@
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>200</y>
+      <y>280</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -44,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>290</y>
+      <y>380</y>
       <width>100</width>
       <height>32</height>
      </rect>
@@ -57,90 +60,132 @@
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>270</y>
+      <y>360</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Title</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="deleteTaskInput">
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>180</y>
+      <y>270</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Title</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputTitle">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>50</y>
+      <x>40</x>
+      <y>170</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Title</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputDescription">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>50</y>
+      <x>200</x>
+      <y>170</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Description</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputClassification">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>50</y>
+      <x>360</x>
+      <y>170</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Classification</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputPriority">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>50</y>
+      <x>520</x>
+      <y>170</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Priority (1-10)</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputDuration">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>50</y>
+      <x>680</x>
+      <y>170</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Duration</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputDuedate">
     <property name="geometry">
      <rect>
-      <x>880</x>
-      <y>50</y>
+      <x>840</x>
+      <y>170</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Due Date</string>
     </property>
    </widget>
    <widget class="QListWidget" name="tasklist">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>430</y>
+      <x>30</x>
+      <y>520</y>
       <width>1201</width>
       <height>192</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>40</y>
+      <width>361</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Your Task Scheduler</string>
     </property>
    </widget>
   </widget>
@@ -150,7 +195,7 @@
      <x>0</x>
      <y>0</y>
      <width>1303</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
