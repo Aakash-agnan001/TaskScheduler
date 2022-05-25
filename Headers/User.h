@@ -6,6 +6,12 @@
 class User {
 	public:
 	TaskList tasks;
+	User() {
+		this->firstName = "";
+		this->lastName = "";
+		this->password = "";
+		this->TaskList tasks = TaskList();
+	}
 	void setPassword(std::string pw) {
 		this->password = pw;	
 	}
