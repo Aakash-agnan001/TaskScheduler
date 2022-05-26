@@ -12,7 +12,7 @@ public:
         this->firstName = "";
         this->lastName = "";
         this->password = "";
-        this->TaskList tasks = TaskList();
+        this->tasks = TaskList();
     }
     void setPassword(std::string pw)
     {
