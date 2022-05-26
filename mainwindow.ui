@@ -26,6 +26,9 @@
       <height>32</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209); border-radius: 10px</string>
+    </property>
     <property name="text">
      <string>ADD TASK</string>
     </property>
@@ -38,6 +41,9 @@
       <width>100</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209); border-radius: 10px</string>
     </property>
     <property name="text">
      <string>DELETE TASK</string>
@@ -52,6 +58,9 @@
       <height>32</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209); border-radius: 10px</string>
+    </property>
     <property name="text">
      <string>GET TASK</string>
     </property>
@@ -64,6 +73,9 @@
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
     </property>
     <property name="placeholderText">
      <string>Enter Title</string>
@@ -78,6 +90,9 @@
       <height>74</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
     <property name="placeholderText">
      <string>Enter Title</string>
     </property>
@@ -90,6 +105,12 @@
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
     </property>
     <property name="placeholderText">
      <string>Enter Title</string>
@@ -104,6 +125,9 @@
       <height>74</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
     <property name="placeholderText">
      <string>Enter Description</string>
     </property>
@@ -116,6 +140,9 @@
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
     </property>
     <property name="placeholderText">
      <string>Enter Classification</string>
@@ -130,6 +157,9 @@
       <height>74</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
     <property name="placeholderText">
      <string>Enter Priority (1-10)</string>
     </property>
@@ -142,6 +172,9 @@
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
     </property>
     <property name="placeholderText">
      <string>Enter Duration</string>
@@ -156,6 +189,9 @@
       <height>74</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
     <property name="placeholderText">
      <string>Enter Due Date</string>
     </property>
@@ -168,6 +204,9 @@
       <width>1251</width>
       <height>501</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209)</string>
     </property>
    </widget>
    <widget class="QLabel" name="WolcomeLabel">
@@ -184,11 +223,27 @@
       <pointsize>40</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
      <string>Your Task Scheduler</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>80</y>
+      <width>391</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>
@@ -198,7 +253,7 @@
      <x>0</x>
      <y>0</y>
      <width>1349</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
