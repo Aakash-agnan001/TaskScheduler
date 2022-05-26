@@ -112,6 +112,9 @@
     <property name="styleSheet">
      <string notr="true">background-color: rgb(161, 160, 162)</string>
     </property>
+    <property name="tabChangesFocus">
+     <bool>true</bool>
+    </property>
     <property name="placeholderText">
      <string>Enter Title</string>
     </property>
@@ -127,6 +130,9 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="tabChangesFocus">
+     <bool>true</bool>
     </property>
     <property name="placeholderText">
      <string>Enter Description</string>

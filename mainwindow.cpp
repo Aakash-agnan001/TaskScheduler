@@ -58,6 +58,12 @@ void MainWindow::on_addTask_clicked()
             }
         }
 
+    if(ui->addTaskInputDuedate->toPlainText().toStdString().size() == 8) {
+        Msgbox.setText("ERROR: ENTER DUEDATE IN MMDDYYYY FORMAT");
+        Msgbox.exec();
+        return;
+    }
+
     this->user.tasks.addTask(ui->addTaskInputTitle->toPlainText().toStdString(), ui->addTaskInputDescription->toPlainText().toStdString(), ui->addTaskInputClassification->toPlainText().toInt(), ui->addTaskInputPriority->toPlainText().toInt(), ui->addTaskInputDuedate->toPlainText().toStdString(), ui->addTaskInputDuration->toPlainText().toInt());
 
     QListWidgetItem *newItem = new QListWidgetItem;
