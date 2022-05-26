@@ -4,6 +4,8 @@
 #include "QMainWindow"
 #include <QTextEdit>
 
+#include "Headers/User.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -25,6 +27,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    User user;
 
 };
 #endif // MAINWINDOW_H

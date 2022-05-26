@@ -31,6 +31,7 @@ HEADERS += \
     ./Headers/UID.h \
     ./Headers/TaskList.h \
     ./Headers/Task.h \
+    ./Headers/User.h \
     mainwindow.h
 
 FORMS += \
