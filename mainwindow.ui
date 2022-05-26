@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1303</width>
-    <height>759</height>
+    <width>1349</width>
+    <height>925</height>
    </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -17,11 +20,14 @@
    <widget class="QPushButton" name="addTask">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>70</y>
+      <x>1230</x>
+      <y>130</y>
       <width>100</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209); border-radius: 10px</string>
     </property>
     <property name="text">
      <string>ADD TASK</string>
@@ -30,11 +36,14 @@
    <widget class="QPushButton" name="deleteTask">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>200</y>
+      <x>590</x>
+      <y>250</y>
       <width>100</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209); border-radius: 10px</string>
     </property>
     <property name="text">
      <string>DELETE TASK</string>
@@ -43,11 +52,14 @@
    <widget class="QPushButton" name="getTask">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>290</y>
+      <x>1000</x>
+      <y>250</y>
       <width>100</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209); border-radius: 10px</string>
     </property>
     <property name="text">
      <string>GET TASK</string>
@@ -56,91 +68,182 @@
    <widget class="QTextEdit" name="getTaskInput">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>270</y>
+      <x>830</x>
+      <y>230</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Title</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="deleteTaskInput">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>180</y>
+      <x>420</x>
+      <y>230</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Title</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputTitle">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>50</y>
+      <x>100</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Title</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputDescription">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>50</y>
+      <x>290</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Description</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputClassification">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>50</y>
+      <x>480</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Classification</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputPriority">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>50</y>
+      <x>670</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Priority (1-10)</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputDuration">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>50</y>
+      <x>860</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Duration</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="addTaskInputDuedate">
     <property name="geometry">
      <rect>
-      <x>880</x>
-      <y>50</y>
+      <x>1050</x>
+      <y>110</y>
       <width>151</width>
       <height>74</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(161, 160, 162)</string>
+    </property>
+    <property name="placeholderText">
+     <string>Enter Due Date</string>
     </property>
    </widget>
    <widget class="QListWidget" name="tasklist">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>430</y>
-      <width>1201</width>
-      <height>192</height>
+      <x>90</x>
+      <y>330</y>
+      <width>1251</width>
+      <height>501</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 206, 209)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="WolcomeLabel">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>20</y>
+      <width>361</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>40</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Your Task Scheduler</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>80</y>
+      <width>391</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>
@@ -149,7 +252,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1303</width>
+     <width>1349</width>
      <height>24</height>
     </rect>
    </property>

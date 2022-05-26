@@ -5,6 +5,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
+    this->setStyleSheet("QMainWindow {background: 'black';}");
+    this->show();
     ui->setupUi(this);
 }
 
