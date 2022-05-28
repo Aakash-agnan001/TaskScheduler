@@ -35,6 +35,26 @@ void TaskList::deleteTask(std::string title)
             std::advance(ptr, count);
             tasks.erase(ptr);
             this->size--;
+            return;
+        }
+        ++count;
+    }
+}
+
+void TaskList::updateTask(std::string title, std::string description, unsigned int classification, unsigned int priority, std::string date, unsigned int duration)
+{
+    std::list<Task>::iterator ptr;
+    int count = 0;
+
+    for(ptr = this->tasks.begin(); ptr != tasks.end(); ++ptr){
+        if ((*ptr).title.getInfo("") == title){
+            std::advance(ptr, count);
+            ptr->title.setInfo(title);
+            ptr->description.setInfo(description);
+            ptr->classification.setInfo(classification);
+            ptr->priority.setInfo(priority);
+            ptr->date.setInfo(date);
+            ptr->duration.setInfo(duration);
             break;
         }
         ++count;
