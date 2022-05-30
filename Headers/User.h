@@ -50,6 +50,7 @@ public:
         file << this->getName() << "," << this->getPassword() << "," << tasks.getTaskList().title << "," << tasks.getTaskList().description << "," << tasks.getTaskList().date << "," << tasks.getTaskList().classification << "," << tasks.getTaskList().duration << "," << tasks.getTaskList().priority << std::endl;
         file.close();
         return true;
+        
     }
 
 private:
