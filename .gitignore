@@ -12,15 +12,16 @@ scheduler.app
 scheduler.app/
 scheduler.pro.user
 .qmake.stash
-main.o
-mainwindow.o
 moc_mainwindow.cpp
-moc_mainwindow.o
 moc_predefs.h
-number.o
 ui_mainwindow.h
+.qmake.stash
+.qtc_clangd
 
 #QMAKE .o Files
+moc_mainwindow.o
+main.o
+mainwindow.o
 Classification.o
 Description.o
 DueDate.o
