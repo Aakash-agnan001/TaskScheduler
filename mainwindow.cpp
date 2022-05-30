@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    user.writeCSV();
     delete ui;
 }
 
@@ -74,7 +75,8 @@ void MainWindow::on_addTask_clicked()
 
     this->user.tasks.addTask(ui->addTaskInputTitle->toPlainText().toStdString(), ui->addTaskInputDescription->toPlainText().toStdString(), ui->addTaskInputClassification->toPlainText().toInt(), ui->addTaskInputPriority->toPlainText().toInt(), ui->addTaskInputDuedate->toPlainText().toStdString(), ui->addTaskInputDuration->toPlainText().toInt());
 
-    QListWidgetItem *newItem = new QListWidgetItem;
+    // QListWidgetItem *newItem = new QListWidgetItem;
+    QListWidgetItem* newItem = new QListWidgetItem;
     newItem->setText(ui->addTaskInputTitle->toPlainText());
     ui->tasklist->insertItem(0, newItem);
 }

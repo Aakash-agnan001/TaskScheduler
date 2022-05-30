@@ -19,6 +19,18 @@ ADD_EXECUTABLE(unit_tests
     ./Sources/TaskList.cpp
 )
 
+ADD_EXECUTABLE(main
+    ./main.cpp
+    ./Sources/Classification.cpp
+    ./Sources/Description.cpp
+	./Sources/Title.cpp
+	./Sources/UID.cpp
+    ./Sources/Priority.cpp
+    ./Sources/Duration.cpp
+    ./Sources/DueDate.cpp 
+    ./Sources/TaskList.cpp
+)
+
 TARGET_LINK_LIBRARIES(unit_tests gtest)
 
 TARGET_COMPILE_DEFINITIONS(unit_tests PRIVATE gtest_disable_pthreads=ON)

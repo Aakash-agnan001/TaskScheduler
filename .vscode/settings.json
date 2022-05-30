@@ -86,6 +86,11 @@
         "memory_resource": "cpp",
         "utility": "cpp",
         "stop_token": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "shared_mutex": "cpp",
+        "span": "cpp",
+        "strstream": "cpp",
+        "valarray": "cpp",
+        "cfenv": "cpp"
     }
 }

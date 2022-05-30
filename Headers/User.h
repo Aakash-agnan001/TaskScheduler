@@ -2,7 +2,6 @@
 #define USER_H
 
 #include "TaskList.h"
-#include "../data.csv"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -43,14 +42,31 @@ public:
     {
         return this->tasks;
     }
-    
-    bool write_CSV() {
-        std::ofstream file;
-        file.open("data.csv", std::ios_base::app);
-        file << this->getName() << "," << this->getPassword() << "," << tasks.getTaskList().title << "," << tasks.getTaskList().description << "," << tasks.getTaskList().date << "," << tasks.getTaskList().classification << "," << tasks.getTaskList().duration << "," << tasks.getTaskList().priority << std::endl;
-        file.close();
-        return true;
-        
+
+    bool writeCSV() {
+        std::ofstream file("Headers/data.txt");
+        if (file.is_open())
+        {
+            std::string data;
+            file << "POGGERS POGGERS";
+            return true;
+        }
+        return false;
+    }
+
+    bool readCSV()
+    {
+        std::ifstream file("Headers/data.txt");
+        if (file.is_open())
+        {
+            std::string data;
+            while (file >> data)
+            {
+                // std::cout << data << std::endl;
+            }
+            return true;
+        }
+        return false;
     }
 
 private:

@@ -33,6 +33,7 @@ TaskList.o
 #Executables
 unit_tests
 test
+main
 
 #VS CODE
 .vscode
