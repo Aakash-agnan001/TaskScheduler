@@ -44,7 +44,7 @@ public:
     }
 
     bool writeCSV() {
-        std::ofstream file("Headers/data.txt");
+        std::ofstream file("data.txt");
         if (file.is_open())
         {
             std::string data;
@@ -56,7 +56,7 @@ public:
 
     bool readCSV()
     {
-        std::ifstream file("Headers/data.txt");
+        std::ifstream file("data.txt");
         if (file.is_open())
         {
             std::string data;
