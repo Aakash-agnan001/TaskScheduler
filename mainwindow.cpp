@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include <QTextEdit>
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -13,7 +15,17 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    user.writeCSV();
+    QFile file("../../../data.txt");
+        if(!file.open(QIODevice::ReadWrite)) {
+            return;
+        }
+
+        QTextStream stream(&file);
+        for(int i = 0; i < 40; ++i ) {
+            stream << QString::number(i) << "Hello World\n";
+        }
+
+        file.close();
     delete ui;
 }
 
@@ -104,11 +116,4 @@ void MainWindow::on_deleteTask_clicked()
 
     Msgbox.setText("ERROR: NO TASK TO DELETE WITH GIVEN PARAMETER");
     Msgbox.exec();
-}
-
-void MainWindow::on_getTask_clicked()
-{
-    // storing getTask inside a Task Pointer so that it can be displayed later on
-    // implementation of that will be done later on
-    //    Task* get_the_task = this->user.tasks.getTask(ui->addTaskInputTitle->toPlainText().toStdString());
 }
