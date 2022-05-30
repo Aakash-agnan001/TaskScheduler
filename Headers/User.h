@@ -2,6 +2,11 @@
 #define USER_H
 
 #include "TaskList.h"
+#include "../data.csv"
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
 
 class User
 {
@@ -37,6 +42,15 @@ public:
     TaskList getTaskList()
     {
         return this->tasks;
+    }
+    
+    bool write_CSV() {
+        std::ofstream file;
+        file.open("data.csv", std::ios_base::app);
+        file << this->getName() << "," << this->getPassword() << "," << tasks.getTaskList().title << "," << tasks.getTaskList().description << "," << tasks.getTaskList().date << "," << tasks.getTaskList().classification << "," << tasks.getTaskList().duration << "," << tasks.getTaskList().priority << std::endl;
+        file.close();
+        return true;
+        
     }
 
 private:
