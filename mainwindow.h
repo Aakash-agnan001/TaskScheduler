@@ -23,6 +23,8 @@ private slots:
 
     void on_deleteTask_clicked();
 
+    void on_getTask_clicked();
+
 private:
     Ui::MainWindow *ui;
     User user;
