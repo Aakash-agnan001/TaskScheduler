@@ -3,6 +3,7 @@
 
 #include "QMainWindow"
 #include <QTextEdit>
+#include <QListWidgetItem>
 
 #include "Headers/User.h"
 
@@ -22,6 +23,10 @@ private slots:
     void on_addTask_clicked();
 
     void on_deleteTask_clicked();
+
+    void on_tasklist_itemClicked(QListWidgetItem *item);
+
+    void on_addNew_clicked();
 
 private:
     Ui::MainWindow *ui;
