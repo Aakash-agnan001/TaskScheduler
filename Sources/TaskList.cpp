@@ -60,15 +60,3 @@ void TaskList::updateTask(std::string title, std::string description, unsigned i
         ++count;
     }
 }
-
-Task* TaskList::getTask(std::string title)
-{
-    for (std::list<Task>::iterator ptr = this->tasks.begin(); ptr != this->tasks.end(); ++ptr)
-    {
-        if ((*ptr).title.getInfo("") == title)
-        {
-            return &(*ptr);
-        }
-    }
-    return nullptr;
-}

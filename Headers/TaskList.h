@@ -5,17 +5,18 @@
 #include <iterator>
 #include <list>
 
-class TaskList : public Task {
-    private:
-        std::list<Task> tasks;
-        int size;
-    public:
-        TaskList();
-        void addTask(std::string, std::string, unsigned int, unsigned int, std::string, unsigned int);
-        void deleteTask(std::string);
-        void updateTask(std::string, std::string, unsigned int, unsigned int, std::string, unsigned int);
-        Task* getTask(std::string);
-        int getSize();
+class TaskList : public Task
+{
+private:
+    int size;
+
+public:
+    std::list<Task> tasks;
+    TaskList();
+    void addTask(std::string, std::string, unsigned int, unsigned int, std::string, unsigned int);
+    void deleteTask(std::string);
+    void updateTask(std::string, std::string, unsigned int, unsigned int, std::string, unsigned int);
+    int getSize();
 };
 
 #endif

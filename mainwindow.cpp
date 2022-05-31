@@ -5,6 +5,9 @@
 #include <QFile>
 #include <QTextStream>
 #include <QScreen>
+#include "Headers/TaskList.h"
+#include <iterator>
+#include <list>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -13,21 +16,66 @@ MainWindow::MainWindow(QWidget *parent)
     this->show();
     ui->setupUi(this);
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+      
+    QFile file("../../../data.txt");
+    if (!file.open(QIODevice::ReadWrite))
+    {
+        return;
+    }
+
+    QTextStream stream(&file);
+
+    QString line;
+    while (!stream.atEnd())
+    {
+        line = stream.readLine();
+        if (line == "START")
+            continue;
+        else if (line == "END")
+            break;
+        else if (line == "")
+            continue;
+        else
+        {
+            QStringList pieces = line.split(",");
+
+            this->user.tasks.addTask(pieces.at(0).toStdString(), pieces.at(1).toStdString(), pieces.at(2).toInt(), pieces.at(3).toInt(), pieces.at(4).toStdString(), pieces.at(5).toInt());
+
+            QListWidgetItem *newItem = new QListWidgetItem;
+            newItem->setText(pieces.at(0));
+            ui->tasklist->insertItem(0, newItem);
+        }
+    }
+
+    file.close();
 }
 
 MainWindow::~MainWindow()
 {
     QFile file("../../../data.txt");
-        if(!file.open(QIODevice::ReadWrite)) {
-            return;
-        }
+    if (!file.open(QIODevice::ReadWrite))
+    {
+        return;
+    }
 
-        QTextStream stream(&file);
-        for(int i = 0; i < 40; ++i ) {
-            stream << QString::number(i) << "Hello World\n";
-        }
+    file.resize(0);
+    QTextStream stream(&file);
 
-        file.close();
+    std::list<Task>::iterator ptr;
+
+    stream << "START"
+           << "\n\n";
+
+    for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
+    {
+
+        stream << QString::fromStdString((*ptr).title.getInfo("")) << "," << QString::fromStdString((*ptr).description.getInfo("")) << "," << QString::number((*ptr).classification.getInfo(1)) << "," << QString::number((*ptr).priority.getInfo(1)) << "," << QString::fromStdString((*ptr).date.getInfo("")) << "," << QString::number((*ptr).duration.getInfo(1)) << "\n";
+    }
+
+    stream << "\n"
+           << "END";
+
+    file.close();
     delete ui;
 }
 
@@ -90,7 +138,7 @@ void MainWindow::on_addTask_clicked()
     this->user.tasks.addTask(ui->addTaskInputTitle->toPlainText().toStdString(), ui->addTaskInputDescription->toPlainText().toStdString(), ui->addTaskInputClassification->toPlainText().toInt(), ui->addTaskInputPriority->toPlainText().toInt(), ui->addTaskInputDuedate->toPlainText().toStdString(), ui->addTaskInputDuration->toPlainText().toInt());
 
     // QListWidgetItem *newItem = new QListWidgetItem;
-    QListWidgetItem* newItem = new QListWidgetItem;
+    QListWidgetItem *newItem = new QListWidgetItem;
     newItem->setText(ui->addTaskInputTitle->toPlainText());
     ui->tasklist->insertItem(0, newItem);
 }
@@ -110,6 +158,7 @@ void MainWindow::on_deleteTask_clicked()
     {
         if (ui->tasklist->item(i)->text() == ui->deleteTaskInput->toPlainText())
         {
+
             this->user.tasks.deleteTask(ui->deleteTaskInput->toPlainText().toStdString());
             delete ui->tasklist->item(i);
             return;
@@ -118,4 +167,37 @@ void MainWindow::on_deleteTask_clicked()
 
     Msgbox.setText("ERROR: NO TASK TO DELETE WITH GIVEN PARAMETER");
     Msgbox.exec();
+}
+
+void MainWindow::on_tasklist_itemClicked(QListWidgetItem *item)
+{
+    std::list<Task>::iterator ptr;
+    for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
+    {
+        if ((*ptr).title.getInfo("") == item->text().toStdString())
+        {
+            ui->addTaskInputTitle->setText(QString::fromStdString((*ptr).title.getInfo("")));
+            ui->addTaskInputDescription->setText(QString::fromStdString((*ptr).description.getInfo("")));
+            ui->addTaskInputClassification->setText(QString::number((*ptr).classification.getInfo(1)));
+            ui->addTaskInputPriority->setText(QString::number((*ptr).priority.getInfo(1)));
+            ui->addTaskInputDuration->setText(QString::number((*ptr).duration.getInfo(1)));
+            ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
+        }
+    }
+}
+
+void MainWindow::on_addNew_clicked()
+{
+    ui->addTaskInputTitle->setText("");
+    ui->addTaskInputDescription->setText("");
+    ui->addTaskInputClassification->setText("");
+    ui->addTaskInputPriority->setText("");
+    ui->addTaskInputDuration->setText("");
+    ui->addTaskInputDuedate->setText("");
+
+    QList<QListWidgetItem *> selected_items = ui->tasklist->selectedItems();
+    for (int i = 0; i < selected_items.count(); ++i)
+    {
+        selected_items.at(i)->setSelected(false);
+    }
 }
