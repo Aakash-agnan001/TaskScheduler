@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QScreen>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -11,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setStyleSheet("QMainWindow {background: 'black';}");
     this->show();
     ui->setupUi(this);
+    this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 }
 
 MainWindow::~MainWindow()
