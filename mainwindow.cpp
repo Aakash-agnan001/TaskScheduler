@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QScreen>
 #include "Headers/TaskList.h"
 #include <iterator>
 #include <list>
@@ -14,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setStyleSheet("QMainWindow {background: 'black';}");
     this->show();
     ui->setupUi(this);
+    this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
+      
     QFile file("../../../data.txt");
     if (!file.open(QIODevice::ReadWrite))
     {
