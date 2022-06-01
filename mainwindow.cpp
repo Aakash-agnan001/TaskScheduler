@@ -517,6 +517,66 @@ void MainWindow::on_Login_clicked()
     if(user.getName() == ui->username->toPlainText().toStdString() && password == user.getPassword()) {
         user.setLoggedin(true);
         ui->stackedWidget->setCurrentIndex(0);
+
+        qInfo() << "BEFORE FILE READ";
+
+        QFile file("../../../data.txt");
+        if (!file.open(QIODevice::ReadWrite))
+        {
+            return;
+        }
+
+        qInfo() << "AFTER FILE READ";
+
+        QTextStream stream(&file);
+
+        QString line;
+        while (!stream.atEnd())
+        {
+            line = stream.readLine();
+            if (line == "START")
+                continue;
+            else if (line == "END")
+                break;
+            else if (line == "")
+                continue;
+            else if(line.startsWith("USER")){
+                continue;
+            }
+            else
+            {
+                QStringList pieces = line.split(",");
+
+                this->user.tasks.addTask(pieces.at(0).toStdString(), pieces.at(1).toStdString(), pieces.at(2).toInt(), pieces.at(3).toInt(), pieces.at(4).toStdString(), pieces.at(5).toInt());
+
+                QListWidgetItem *newItem = new QListWidgetItem;
+                 newItem->setText(pieces.at(3) + " - " + pieces.at(0));
+    //            newItem->setText(pieces.at(0));
+                ui->tasklist->insertItem(0, newItem);
+
+                QListWidgetItem *newItem_2 = new QListWidgetItem;
+                 newItem_2->setText(pieces.at(3) + " - " + pieces.at(0));
+    //            newItem_2->setText(pieces.at(0));
+
+                switch (pieces.at(2).toInt())
+                {
+                case 1:
+                    ui->group_1->insertItem(0, newItem_2);
+                    break;
+                case 2:
+                    ui->group_2->insertItem(0, newItem_2);
+                    break;
+                case 3:
+                    ui->group_3->insertItem(0, newItem_2);
+                    break;
+                case 4:
+                    ui->group_4->insertItem(0, newItem_2);
+                    break;
+                }
+            }
+        }
+
+        file.close();
     }
 }
 
