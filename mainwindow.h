@@ -28,6 +28,16 @@ private slots:
 
     void on_addNew_clicked();
 
+    void on_group_1_itemClicked(QListWidgetItem *item);
+
+    void on_group_2_itemClicked(QListWidgetItem *item);
+
+    void on_group_3_itemClicked(QListWidgetItem *item);
+
+    void on_group_4_itemClicked(QListWidgetItem *item);
+
+    void on_Login_clicked();
+
 private:
     Ui::MainWindow *ui;
     User user;

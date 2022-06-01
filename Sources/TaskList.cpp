@@ -32,7 +32,6 @@ void TaskList::deleteTask(std::string title)
     {
         if ((*ptr).title.getInfo("") == title)
         {
-            std::advance(ptr, count);
             tasks.erase(ptr);
             this->size--;
             return;
@@ -48,7 +47,6 @@ void TaskList::updateTask(std::string title, std::string description, unsigned i
 
     for(ptr = this->tasks.begin(); ptr != tasks.end(); ++ptr){
         if ((*ptr).title.getInfo("") == title){
-            std::advance(ptr, count);
             ptr->title.setInfo(title);
             ptr->description.setInfo(description);
             ptr->classification.setInfo(classification);
