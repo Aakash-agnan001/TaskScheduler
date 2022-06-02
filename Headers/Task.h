@@ -4,7 +4,6 @@
 #include "Description.h"
 #include "Priority.h"
 #include "Classification.h"
-#include "UID.h"
 #include "Title.h"
 #include "Duration.h"
 #include "DueDate.h"
@@ -12,7 +11,6 @@
 class Task {
 	public:
         Task() {
-            uid = UID();
             title = Title();
             date = DueDate();
             description = Description();
@@ -21,7 +19,6 @@ class Task {
             priority = Priority();
         };
     public:
-		UID uid;
 		Title title;
 		DueDate date;
 		Description description;

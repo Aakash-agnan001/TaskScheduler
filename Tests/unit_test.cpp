@@ -3,7 +3,6 @@
 #include "Classification_Tests.h"
 #include "Priority_Tests.h"
 #include "TitleTests.h"
-#include "UIDTests.h"
 #include "DurationTests.h"
 #include "DueDateTests.h"
 #include "TaskList_Tests.h"

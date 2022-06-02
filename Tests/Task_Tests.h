@@ -4,12 +4,6 @@
 #include "gtest/gtest.h"
 #include "../Headers/Task.h"
 
-TEST(Task, defConstructUID)
-{
-	Task sampleTask;
-	EXPECT_EQ(sampleTask.uid.getInfo(""), "");	
-}
-
 TEST(Task, defConstructTitle)
 {
 	Task sampleTask;
