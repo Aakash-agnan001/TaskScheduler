@@ -17,18 +17,7 @@ ADD_EXECUTABLE(unit_tests
     ./Sources/Duration.cpp
     ./Sources/DueDate.cpp 
     ./Sources/TaskList.cpp
-)
-
-ADD_EXECUTABLE(main
-    ./main.cpp
-    ./Sources/Classification.cpp
-    ./Sources/Description.cpp
-	./Sources/Title.cpp
-	./Sources/UID.cpp
-    ./Sources/Priority.cpp
-    ./Sources/Duration.cpp
-    ./Sources/DueDate.cpp 
-    ./Sources/TaskList.cpp
+	./Headers/User.h
 )
 
 TARGET_LINK_LIBRARIES(unit_tests gtest)
