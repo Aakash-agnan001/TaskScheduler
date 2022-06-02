@@ -4,13 +4,6 @@
 #include "gtest/gtest.h"
 #include "../Headers/User.h"
 
-//TEST(USER, May18th)
-//{
-//    User *user = new User;
-//    EXPECT_EQ(user->writeCSV(), true);
-//    delete user;
-//}
-// not sure who wrote this but it's breaking the code but i'll just leave this here just in case
 TEST(USER, constructorUser)
 {
 	User test;

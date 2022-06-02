@@ -12,7 +12,6 @@ ADD_EXECUTABLE(unit_tests
     ./Sources/Classification.cpp
     ./Sources/Description.cpp
 	./Sources/Title.cpp
-	./Sources/UID.cpp
     ./Sources/Priority.cpp
     ./Sources/Duration.cpp
     ./Sources/DueDate.cpp 
