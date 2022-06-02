@@ -15,7 +15,6 @@ SOURCES += \
     ./Sources/Duration.cpp \
     ./Sources/Priority.cpp \
     ./Sources/Title.cpp \
-    ./Sources/UID.cpp \
     ./Sources/TaskList.cpp \
     main.cpp \
     mainwindow.cpp
@@ -28,7 +27,6 @@ HEADERS += \
     ./Headers/Duration.h \
     ./Headers/Priority.h \
     ./Headers/Title.h \
-    ./Headers/UID.h \
     ./Headers/TaskList.h \
     ./Headers/Task.h \
     ./Headers/User.h \
