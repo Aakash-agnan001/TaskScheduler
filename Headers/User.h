@@ -65,7 +65,7 @@ public:
         return encrypted;
     }
 
-    std::string decrypt(std::vector<int> &encrypted)
+    std::string decrypt(std::vector<int> encrypted)
     {
         std::string decrypted = "";
 

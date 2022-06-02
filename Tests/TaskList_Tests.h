@@ -29,16 +29,6 @@ TEST(TaskList, deleteTask)
         EXPECT_EQ(test.getSize(), 2);
 }
 
-TEST(TaskList, getTask)
-{
-	TaskList test;
-        test.addTask("assignment 1", "first assignment", 1, 1, "12112002", 60);
-        test.addTask("assignment 2", "second assignment", 2, 2, "12122002", 60);
-        test.addTask("assignment 3", "third assignment", 3, 3, "12132002", 60);
-        Task* testptr = test.getTask("assignment 3");
-        EXPECT_EQ(testptr->title.getInfo(""), "assignment 3");
-}
-
 TEST(TaskList, getSize2)
 {
 	TaskList test;
@@ -50,20 +40,6 @@ TEST(TaskList, getSize2)
 	test.addTask("quiz", "first quiz", 5, 5, "01023003", 90);
 	test.addTask("final", "final test", 10, 10, "05054004", 180);
         EXPECT_EQ(test.getSize(), 3);
-}
-
-TEST(TaskList, getTask2)
-{
-	TaskList test;
-        test.addTask("assignment 1", "first assignment", 1, 1, "12112002", 60);
-        test.addTask("assignment 2", "second assignment", 2, 2, "12122002", 60);
-        test.addTask("assignment 3", "third assignment", 3, 3, "12132002", 60);
-        test.deleteTask("assignment 3");
-        test.deleteTask("assignment 2");
-        test.addTask("quiz", "first quiz", 5, 5, "01023003", 90);
-        test.addTask("final", "final test", 10, 10, "05054004", 180);
-	Task* testptr = test.getTask("final");
-	EXPECT_EQ(testptr->title.getInfo(""), "final");
 }
 
 #endif
