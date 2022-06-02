@@ -192,11 +192,9 @@ void MainWindow::on_addTask_clicked()
             {
                 if ((*ptr).title.getInfo("") == ui->addTaskInputTitle->toPlainText().toStdString())
                 {
-                    qInfo() << (*ptr).classification.getInfo(1);
                     switch ((*ptr).classification.getInfo(1))
                     {
                     case 1:
-                        qInfo() << "CASE 1";
                         for (int i = 0; i < ui->group_1->count(); ++i)
                         {
                             if (ui->group_1->item(i)->text().split(" - ").at(1).toStdString() == (*ptr).title.getInfo(""))
@@ -207,7 +205,6 @@ void MainWindow::on_addTask_clicked()
 
                         break;
                     case 2:
-                        qInfo() << "CASE 2";
                         for (int i = 0; i < ui->group_2->count(); ++i)
                         {
                             if (ui->group_2->item(i)->text().split(" - ").at(1).toStdString() == (*ptr).title.getInfo(""))
@@ -217,7 +214,6 @@ void MainWindow::on_addTask_clicked()
                         }
                         break;
                     case 3:
-                        qInfo() << "CASE 3";
                         for (int i = 0; i < ui->group_3->count(); ++i)
                         {
                             if (ui->group_3->item(i)->text().split(" - ").at(1).toStdString() == (*ptr).title.getInfo(""))
@@ -227,7 +223,6 @@ void MainWindow::on_addTask_clicked()
                         }
                         break;
                     case 4:
-                        qInfo() << "CASE 4";
                         for (int i = 0; i < ui->group_4->count(); ++i)
                         {
                             if (ui->group_4->item(i)->text().split(" - ").at(1).toStdString() == (*ptr).title.getInfo(""))
@@ -518,15 +513,11 @@ void MainWindow::on_Login_clicked()
         user.setLoggedin(true);
         ui->stackedWidget->setCurrentIndex(0);
 
-        qInfo() << "BEFORE FILE READ";
-
         QFile file("../../../data.txt");
         if (!file.open(QIODevice::ReadWrite))
         {
             return;
         }
-
-        qInfo() << "AFTER FILE READ";
 
         QTextStream stream(&file);
 
