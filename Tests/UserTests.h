@@ -56,11 +56,11 @@ TEST(USER, setLog)
 	EXPECT_EQ(test.getLoggedin(), true);
 }
 
-//TEST(USER, encrypt_decrypt)
-//{
-//	User test;
-//	test.setPassword("password");
-//	EXPECT_EQ(test.decrypt(&(test.encrypt(test.getPassword(), 5, 1649))), "password");
-//}
+TEST(USER, encrypt_decrypt)
+{
+	User test;
+	test.setPassword("password"); 
+	EXPECT_EQ(test.decrypt(test.encrypt(test.getPassword(), 5, 1649)), "password");
+}
 
 #endif
