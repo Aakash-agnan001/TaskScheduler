@@ -69,7 +69,7 @@ public:
     {
         std::string decrypted = "";
 
-        for (int i = 0; i < encrypted.size(); ++i)
+        for (unsigned long i = 0; i < encrypted.size(); ++i)
         {
             int ch = encrypted.at(i);
             // int ascii = int(ch);
