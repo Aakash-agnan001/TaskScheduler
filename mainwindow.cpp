@@ -385,7 +385,7 @@ void MainWindow::on_deleteTask_clicked()
     Msgbox.exec();
 }
 
-void MainWindow::on_tasklist_itemClicked(QListWidgetItem *item)
+void MainWindow::autofill(QListWidgetItem *item)
 {
     std::list<Task>::iterator ptr;
     for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
@@ -400,6 +400,12 @@ void MainWindow::on_tasklist_itemClicked(QListWidgetItem *item)
             ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
         }
     }
+
+}
+
+void MainWindow::on_tasklist_itemClicked(QListWidgetItem *item)
+{
+    autofill(item);
 }
 
 void MainWindow::on_addNew_clicked()
@@ -444,70 +450,22 @@ void MainWindow::on_addNew_clicked()
 
 void MainWindow::on_group_1_itemClicked(QListWidgetItem *item)
 {
-    std::list<Task>::iterator ptr;
-    for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
-    {
-        if ((*ptr).title.getInfo("") == item->text().split(" - ").at(1).toStdString())
-        {
-            ui->addTaskInputTitle->setText(QString::fromStdString((*ptr).title.getInfo("")));
-            ui->addTaskInputDescription->setText(QString::fromStdString((*ptr).description.getInfo("")));
-            ui->addTaskInputClassification->setText(QString::number((*ptr).classification.getInfo(1)));
-            ui->addTaskInputPriority->setText(QString::number((*ptr).priority.getInfo(1)));
-            ui->addTaskInputDuration->setText(QString::number((*ptr).duration.getInfo(1)));
-            ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
-        }
-    }
+    autofill(item);
 }
 
 void MainWindow::on_group_2_itemClicked(QListWidgetItem *item)
 {
-    std::list<Task>::iterator ptr;
-    for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
-    {
-        if ((*ptr).title.getInfo("") == item->text().split(" - ").at(1).toStdString())
-        {
-            ui->addTaskInputTitle->setText(QString::fromStdString((*ptr).title.getInfo("")));
-            ui->addTaskInputDescription->setText(QString::fromStdString((*ptr).description.getInfo("")));
-            ui->addTaskInputClassification->setText(QString::number((*ptr).classification.getInfo(1)));
-            ui->addTaskInputPriority->setText(QString::number((*ptr).priority.getInfo(1)));
-            ui->addTaskInputDuration->setText(QString::number((*ptr).duration.getInfo(1)));
-            ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
-        }
-    }
+    autofill(item);
 }
 
 void MainWindow::on_group_3_itemClicked(QListWidgetItem *item)
 {
-    std::list<Task>::iterator ptr;
-    for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
-    {
-        if ((*ptr).title.getInfo("") == item->text().split(" - ").at(1).toStdString())
-        {
-            ui->addTaskInputTitle->setText(QString::fromStdString((*ptr).title.getInfo("")));
-            ui->addTaskInputDescription->setText(QString::fromStdString((*ptr).description.getInfo("")));
-            ui->addTaskInputClassification->setText(QString::number((*ptr).classification.getInfo(1)));
-            ui->addTaskInputPriority->setText(QString::number((*ptr).priority.getInfo(1)));
-            ui->addTaskInputDuration->setText(QString::number((*ptr).duration.getInfo(1)));
-            ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
-        }
-    }
+    autofill(item);
 }
 
 void MainWindow::on_group_4_itemClicked(QListWidgetItem *item)
 {
-    std::list<Task>::iterator ptr;
-    for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
-    {
-        if ((*ptr).title.getInfo("") == item->text().split(" - ").at(1).toStdString())
-        {
-            ui->addTaskInputTitle->setText(QString::fromStdString((*ptr).title.getInfo("")));
-            ui->addTaskInputDescription->setText(QString::fromStdString((*ptr).description.getInfo("")));
-            ui->addTaskInputClassification->setText(QString::number((*ptr).classification.getInfo(1)));
-            ui->addTaskInputPriority->setText(QString::number((*ptr).priority.getInfo(1)));
-            ui->addTaskInputDuration->setText(QString::number((*ptr).duration.getInfo(1)));
-            ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
-        }
-    }
+    autofill(item);
 }
 
 void MainWindow::on_Login_clicked()
