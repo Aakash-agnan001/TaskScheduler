@@ -512,6 +512,14 @@ void MainWindow::on_group_4_itemClicked(QListWidgetItem *item)
 
 void MainWindow::on_Login_clicked()
 {
+    if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText().toInt() == 0 || ui->n->toPlainText().toInt() == 0)
+    {
+      QMessageBox Msgbox;
+        Msgbox.setText("ERROR: REQUIRED FIELDS LEFT EMPTY.");
+        Msgbox.exec();
+        return;
+    }
+
     //e = 5, n = 1649
     std::vector<int> numbers = user.encrypt(ui->password->toPlainText().toStdString(), ui->e->toPlainText().toInt(), ui->n->toPlainText().toInt());
     std::string password = "";
