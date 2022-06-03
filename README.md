@@ -31,7 +31,7 @@ We used the strategy pattern, as our algorithms and methods were very similar wi
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ > The user installs the program containing the QT and C++ implementaion files, as well as the .csv where their data is stored. The user is prompted for their user name, password and encryption key after clicking the login button. From this point they can interact with the program and create a list of tasks with any of the attributes tied to the classes in the source files. The user can then log out and close the program. 
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > The project was tested through unit tests on all of the fundamental classes (i.e. Information and all it's derivative classes) done through the google tests module and the resolution of errors as they appeared while running the earlier builds.
  
