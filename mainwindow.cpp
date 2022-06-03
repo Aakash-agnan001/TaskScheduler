@@ -17,7 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 
-
     ui->tasklist->setSortingEnabled(true);
     ui->group_1->setSortingEnabled(true);
     ui->group_2->setSortingEnabled(true);
@@ -26,18 +25,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->stackedWidget->setCurrentIndex(1);
 
-//    if(user.getLoggedin()){
+    //    if(user.getLoggedin()){
 
+    //    QFile file("../../../data.txt");
+    //    if (!file.open(QIODevice::ReadWrite))
+    //    {
+    //        return;
+    //    }
 
-
-//    QFile file("../../../data.txt");
-//    if (!file.open(QIODevice::ReadWrite))
-//    {
-//        return;
-//    }
-
-//    QTextStream stream(&file);
-
+    //    QTextStream stream(&file);
 
     //    QString line;
     //    while (!stream.atEnd())
@@ -86,17 +82,16 @@ MainWindow::MainWindow(QWidget *parent)
     //    }
 
     //    file.close();
-//    } else {
+    //    } else {
 
-//    }
+    //    }
 
-QFile file("../../../data.txt");
-    if (!file.open(QIODevice::ReadWrite))
+    QFile file("../../../data.txt");
+    if (!file.open(QIODevice::ReadOnly))
     {
         return;
     }
     QTextStream stream(&file);
-
 
     QString line;
     while (!stream.atEnd())
@@ -104,12 +99,15 @@ QFile file("../../../data.txt");
         line = stream.readLine();
         if (line == "START" || line == "")
             continue;
-        else if(line.startsWith("USER")){
+        else if (line.startsWith("USER"))
+        {
             user.setName(line.split(",").at(1).toStdString());
 
             std::string encryption = line.split(",").at(2).toStdString();
 
             user.setPassword(encryption);
+
+            qInfo() << QString::fromStdString(user.getName()) << QString::fromStdString(user.getPassword());
             break;
         }
     }
@@ -118,11 +116,10 @@ QFile file("../../../data.txt");
 MainWindow::~MainWindow()
 {
 
-//    if(user.getLoggedin()){
-
+    //    if(user.getLoggedin()){
 
     QFile file("../../../data.txt");
-    if (!file.open(QIODevice::ReadWrite))
+    if (!file.open(QIODevice::WriteOnly))
     {
         return;
     }
@@ -147,9 +144,9 @@ MainWindow::~MainWindow()
            << "END";
 
     file.close();
-//    } else {
-//        ui->stackedWidget->setCurrentIndex(1);
-//    }
+    //    } else {
+    //        ui->stackedWidget->setCurrentIndex(1);
+    //    }
 
     user.setLoggedin(false);
     delete ui->login;
@@ -158,21 +155,31 @@ MainWindow::~MainWindow()
     delete ui->WolcomeLabel_2;
 
     // Delete variables inside taskList and classification widgets
-    for(int i = 0; i < ui->tasklist->count(); ++i) {
-        delete ui->tasklist->item(i);
-    }
-    for(int i = 0; i < ui->group_1->count(); i++) {
-        delete ui->group_1->item(i);
-    }
-    for(int i = 0; i < ui->group_2->count(); i++) {
-        delete ui->group_2->item(i);
-    }
-    for(int i = 0; i < ui->group_3->count(); i++) {
-        delete ui->group_3->item(i);
-    }
-    for(int i = 0; i < ui->group_4->count(); i++) {
-        delete ui->group_4->item(i);
-    }
+    ui->tasklist->clear();
+    ui->group_1->clear();
+    ui->group_2->clear();
+    ui->group_3->clear();
+    ui->group_4->clear();
+//    for (int i = 0; i < ui->tasklist->count(); ++i)
+//    {
+//        delete ui->tasklist->item(i);
+//    }
+//    for (int i = 0; i < ui->group_1->count(); i++)
+//    {
+//        delete ui->group_1->item(i);
+//    }
+//    for (int i = 0; i < ui->group_2->count(); i++)
+//    {
+//        delete ui->group_2->item(i);
+//    }
+//    for (int i = 0; i < ui->group_3->count(); i++)
+//    {
+//        delete ui->group_3->item(i);
+//    }
+//    for (int i = 0; i < ui->group_4->count(); i++)
+//    {
+//        delete ui->group_4->item(i);
+//    }
 
     delete ui->tasklist;
     delete ui->group_1;
@@ -337,12 +344,13 @@ void MainWindow::on_addTask_clicked()
                 break;
             }
 
-            for(int i = 0; i < ui->tasklist->count(); ++i) {
-                if(ui->tasklist->item(i)->text().split(" - ").at(1) == ui->addTaskInputTitle->toPlainText()) {
+            for (int i = 0; i < ui->tasklist->count(); ++i)
+            {
+                if (ui->tasklist->item(i)->text().split(" - ").at(1) == ui->addTaskInputTitle->toPlainText())
+                {
                     ui->tasklist->item(i)->setText(ui->addTaskInputPriority->toPlainText() + " - " + ui->tasklist->item(i)->text().split(" - ").at(1));
                 }
             }
-
 
             Msgbox.setText("TASK UPDATED");
             Msgbox.exec();
@@ -356,8 +364,8 @@ void MainWindow::on_addTask_clicked()
     QListWidgetItem *newItem = new QListWidgetItem;
     QListWidgetItem *newItem_2 = new QListWidgetItem;
 
-    newItem->setText(ui->addTaskInputPriority->toPlainText() + " - " +ui->addTaskInputTitle->toPlainText());
-    newItem_2->setText(ui->addTaskInputPriority->toPlainText() + " - " +ui->addTaskInputTitle->toPlainText());
+    newItem->setText(ui->addTaskInputPriority->toPlainText() + " - " + ui->addTaskInputTitle->toPlainText());
+    newItem_2->setText(ui->addTaskInputPriority->toPlainText() + " - " + ui->addTaskInputTitle->toPlainText());
     ui->tasklist->insertItem(0, newItem);
 
     switch (ui->addTaskInputClassification->toPlainText().toInt())
@@ -398,29 +406,37 @@ void MainWindow::on_deleteTask_clicked()
         }
     }
 
-    for(int i = 0; i < ui->group_1->count(); ++i){
-        if (ui->group_1->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText()){
+    for (int i = 0; i < ui->group_1->count(); ++i)
+    {
+        if (ui->group_1->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText())
+        {
             delete ui->group_1->item(i);
             return;
         }
     }
 
-    for(int i = 0; i < ui->group_2->count(); ++i){
-        if (ui->group_2->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText()){
+    for (int i = 0; i < ui->group_2->count(); ++i)
+    {
+        if (ui->group_2->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText())
+        {
             delete ui->group_2->item(i);
             return;
         }
     }
 
-    for(int i = 0; i < ui->group_3->count(); ++i){
-        if (ui->group_3->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText()){
+    for (int i = 0; i < ui->group_3->count(); ++i)
+    {
+        if (ui->group_3->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText())
+        {
             delete ui->group_3->item(i);
             return;
         }
     }
 
-    for(int i = 0; i < ui->group_4->count(); ++i){
-        if (ui->group_4->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText()){
+    for (int i = 0; i < ui->group_4->count(); ++i)
+    {
+        if (ui->group_4->item(i)->text().split(" - ").at(1) == ui->deleteTaskInput->toPlainText())
+        {
             delete ui->group_4->item(i);
             return;
         }
@@ -445,7 +461,6 @@ void MainWindow::autofill(QListWidgetItem *item)
             ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
         }
     }
-
 }
 
 void MainWindow::on_tasklist_itemClicked(QListWidgetItem *item)
@@ -517,21 +532,23 @@ void MainWindow::on_Login_clicked()
 {
     if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText() == "" || ui->n->toPlainText() == "")
     {
-      QMessageBox Msgbox;
+        QMessageBox Msgbox;
         Msgbox.setText("ERROR: REQUIRED FIELDS LEFT EMPTY.");
         Msgbox.exec();
         return;
     }
 
-    //e = 5, n = 1649
+    // e = 5, n = 1649
     std::vector<int> numbers = user.encrypt(ui->password->toPlainText().toStdString(), ui->e->toPlainText().toInt(), ui->n->toPlainText().toInt());
     std::string password = "";
 
-    for(unsigned int i = 0 ; i < numbers.size(); ++i) {
+    for (unsigned int i = 0; i < numbers.size(); ++i)
+    {
         password += std::to_string(numbers.at(i)) + " ";
     }
 
-    if(user.getName() == ui->username->toPlainText().toStdString() && password == user.getPassword()) {
+    if (user.getName() == ui->username->toPlainText().toStdString() && password == user.getPassword())
+    {
         user.setLoggedin(true);
         ui->stackedWidget->setCurrentIndex(0);
 
@@ -553,7 +570,8 @@ void MainWindow::on_Login_clicked()
                 break;
             else if (line == "")
                 continue;
-            else if(line.startsWith("USER")){
+            else if (line.startsWith("USER"))
+            {
                 continue;
             }
             else
@@ -563,13 +581,13 @@ void MainWindow::on_Login_clicked()
                 this->user.tasks.addTask(pieces.at(0).toStdString(), pieces.at(1).toStdString(), pieces.at(2).toInt(), pieces.at(3).toInt(), pieces.at(4).toStdString(), pieces.at(5).toInt());
 
                 QListWidgetItem *newItem = new QListWidgetItem;
-                 newItem->setText(pieces.at(3) + " - " + pieces.at(0));
-    //            newItem->setText(pieces.at(0));
+                newItem->setText(pieces.at(3) + " - " + pieces.at(0));
+                //            newItem->setText(pieces.at(0));
                 ui->tasklist->insertItem(0, newItem);
 
                 QListWidgetItem *newItem_2 = new QListWidgetItem;
-                 newItem_2->setText(pieces.at(3) + " - " + pieces.at(0));
-    //            newItem_2->setText(pieces.at(0));
+                newItem_2->setText(pieces.at(3) + " - " + pieces.at(0));
+                //            newItem_2->setText(pieces.at(0));
 
                 switch (pieces.at(2).toInt())
                 {
@@ -593,66 +611,49 @@ void MainWindow::on_Login_clicked()
     }
 }
 
-
 void MainWindow::on_log_out_clicked()
 {
-
+    qInfo() << "logout";
     QFile file("../../../data.txt");
     if (!file.open(QIODevice::ReadWrite))
     {
         return;
     }
+    qInfo() << "after file open";
 
     file.resize(0);
     QTextStream stream(&file);
 
     std::list<Task>::iterator ptr;
 
-    stream << "START"
-           << "\n\n";
+    stream << "START"<< "\n\n";
 
     stream << "USER," << QString::fromStdString(user.getName()) << "," << QString::fromStdString(user.getPassword()) << "\n\n";
 
     for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
     {
-
         stream << QString::fromStdString((*ptr).title.getInfo("")) << "," << QString::fromStdString((*ptr).description.getInfo("")) << "," << QString::number((*ptr).classification.getInfo(1)) << "," << QString::number((*ptr).priority.getInfo(1)) << "," << QString::fromStdString((*ptr).date.getInfo("")) << "," << QString::number((*ptr).duration.getInfo(1)) << "\n";
     }
-
-    //added code to try to stop duplication
-
-    ptr = user.tasks.tasks.begin();
-    for(; ptr != user.tasks.tasks.end(); ++ptr) {
-        user.tasks.deleteTask((*ptr).title.getInfo(""));
-    }
-
-
-    stream << "\n"
-           << "END";
-
+    stream << "\n"<< "END";
     file.close();
-//    } else {
+    qInfo() << "after file write";
 
-//    }
+    user.tasks.tasks.clear();
 
-    user.setLoggedin(false);
+    std::list<Task>::iterator ptr_2;
+    ptr_2 = user.tasks.tasks.begin();
+    for (ptr_2 = user.tasks.tasks.begin(); ptr_2 != user.tasks.tasks.end(); ++ptr_2)
+    {
+        qInfo() << QString::fromStdString((*ptr).title.getInfo(""));
+    }
 
+    qInfo() << "delete user";
 
-    for(int i = 0; i < ui->tasklist->count(); ++i) {
-        delete ui->tasklist->item(i);
-    }
-    for(int i = 0; i < ui->group_1->count(); i++) {
-        delete ui->group_1->item(i);
-    }
-    for(int i = 0; i < ui->group_2->count(); i++) {
-        delete ui->group_2->item(i);
-    }
-    for(int i = 0; i < ui->group_3->count(); i++) {
-        delete ui->group_3->item(i);
-    }
-    for(int i = 0; i < ui->group_4->count(); i++) {
-        delete ui->group_4->item(i);
-    }
+    ui->tasklist->clear();
+    ui->group_1->clear();
+    ui->group_2->clear();
+    ui->group_3->clear();
+    ui->group_4->clear();
 
     ui->addTaskInputTitle->setText("");
     ui->addTaskInputDescription->setText("");
@@ -661,7 +662,7 @@ void MainWindow::on_log_out_clicked()
     ui->addTaskInputDuration->setText("");
     ui->addTaskInputDuedate->setText("");
     user.setLoggedin(false);
-//    ui->stackedWidget->setCurrentIndex(1);
     ui->stackedWidget->setCurrentIndex(1);
-}
 
+    qInfo() << "delete";
+}
