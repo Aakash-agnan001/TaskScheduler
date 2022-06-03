@@ -8,6 +8,11 @@
 #include "TaskList_Tests.h"
 #include "Task_Tests.h"
 #include "UserTests.h"
+#include "mock_qt_date_tests.h"
+#include "mock_qt_priority_tests.h"
+#include "mock_qt_classification_tests.h"
+#include "mock_qt_duration_tests.h"
+#include "mock_qt_qlist_tests.h"
 
 int main(int argc, char **argv)
 {
