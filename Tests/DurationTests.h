@@ -26,4 +26,19 @@ TEST(DURATION, SetInfo)
     delete duration;
 }
 
+TEST(DURATION, Constructor)
+{
+    Information *duration = new Duration(10);
+    EXPECT_EQ(duration->getInfo(0), 10);
+    delete duration;
+}
+
+TEST(DURATION, large)
+{
+    Information *duration = new Duration(0);
+    duration->setInfo(1234);
+    EXPECT_EQ(duration->getInfo(0), 1234);
+    delete duration;
+}
+
 #endif

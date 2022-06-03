@@ -19,6 +19,13 @@ TEST(TaskList, addTask)
 	EXPECT_EQ(test.getSize(), 3);
 }
 
+TEST(TaskList, addOneTask)
+{       
+        TaskList test;
+        test.addTask("assignment 1", "first assignment", 1, 1, "12112002", 60);
+        EXPECT_EQ(test.getSize(), 1);
+}
+
 TEST(TaskList, deleteTask)
 {
 	TaskList test;
@@ -27,6 +34,18 @@ TEST(TaskList, deleteTask)
         test.addTask("assignment 3", "third assignment", 3, 3, "12132002", 60);
 	test.deleteTask("assignment 3");
         EXPECT_EQ(test.getSize(), 2);
+}
+
+TEST(TaskList, deleteAllTask)
+{
+        TaskList test;
+        test.addTask("assignment 1", "first assignment", 1, 1, "12112002", 60);
+        test.addTask("assignment 2", "second assignment", 2, 2, "12122002", 60);
+        test.addTask("assignment 3", "third assignment", 3, 3, "12132002", 60);
+        test.deleteTask("assignment 3");
+	test.deleteTask("assignment 2");
+	test.deleteTask("assignment 1");
+        EXPECT_EQ(test.getSize(), 0);
 }
 
 TEST(TaskList, getSize2)

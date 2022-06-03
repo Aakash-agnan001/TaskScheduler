@@ -26,4 +26,10 @@ TEST(DUEDATE, October31st)
     delete due_date;
 }
 
+TEST(DUEDATE, Constructor) {
+	Information *due_date = new DueDate("05072003");
+	EXPECT_EQ(due_date->getInfo(""), "05072003");
+	delete due_date;
+}
+
 #endif

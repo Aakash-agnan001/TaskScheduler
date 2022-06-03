@@ -19,4 +19,28 @@ TEST(TITLE, setInfo)
     delete test;
 }
 
+TEST(TITLE, EmptysetInfo)
+{
+        Information* test = new Title("");
+        test->setInfo("");
+        EXPECT_EQ(test->getInfo(""), "");
+    delete test;
+}
+
+TEST(TITLE, EmptyConstructor)
+{
+        Information* test = new Title("");
+        //test->setInfo("work");
+        EXPECT_EQ(test->getInfo(""), "");
+    delete test;
+}
+
+TEST(TITLE, stringNumbers)
+{
+        Information* test = new Title("");
+        test->setInfo("work123");
+        EXPECT_EQ(test->getInfo(""), "work123");
+    delete test;
+}
+
 #endif
