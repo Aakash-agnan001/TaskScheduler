@@ -143,7 +143,7 @@ MainWindow::~MainWindow()
     delete ui->addTaskInputDuration;
     delete ui->addTaskInputClassification;
     delete ui->addTaskInputDuedate;
-    delete ui->addTask
+    delete ui->addTask;
     delete ui->WolcomeLabel_4;
     delete ui->deleteTaskInput;
     delete ui->deleteTask;

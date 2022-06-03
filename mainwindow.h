@@ -41,7 +41,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     User user;
-    void autofill(QListWidgetItems *);
+    void autofill(QListWidgetItem *);
 
 };
 #endif // MAINWINDOW_H
