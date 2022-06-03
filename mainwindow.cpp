@@ -125,6 +125,41 @@ MainWindow::~MainWindow()
     }
 
     user.setLoggedin(false);
+    delete ui->centralwidget;
+    delete ui->stackedWidget;
+    delete ui->login;
+    delete ui->WolcomeLabel;
+    delete ui->WolcomeLabel_3;
+    delete ui->WolcomeLabel_2;
+    delete ui->tasklist;
+    delete ui->group_1;
+    delete ui->group_2;
+    delete ui->group_3;
+    delete ui->group_4;
+    delete ui->addNew;
+    delete ui->addTaskInputTitle;
+    delete ui->addTaskInputDescription;
+    delete ui->addTaskInputPriority;
+    delete ui->addTaskInputDuration;
+    delete ui->addTaskInputClassification;
+    delete ui->addTaskInputDuedate;
+    delete ui->addTask
+    delete ui->WolcomeLabel_4;
+    delete ui->deleteTaskInput;
+    delete ui->deleteTask;
+    delete ui->WolcomeLabel_5;
+    delete ui->WolcomeLabel_6;
+    delete ui->WolcomeLabel_7;
+    delete ui->WolcomeLabel_8;
+    delete ui->main;
+    delete ui->Login;
+    delete ui->username;
+    delete ui->password;
+    delete ui->n;
+    delete ui->e;
+    delete ui->WolcomeLabel_9;
+    delete ui->menubar;
+    delete ui->statusbar;
     delete ui;
 }
 
