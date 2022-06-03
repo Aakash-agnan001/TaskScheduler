@@ -76,7 +76,6 @@ public:
 
             // int decrypt = binaryImplementation(ch, 281, 1501);
             int decrypt = binaryImplementation(ch, 1229, 1649);
-            std::cout << decrypt << " ";
             // encrypted = encrypted + std::to_string(encrypt) + " ";
             decrypted += decrypt;
         }
