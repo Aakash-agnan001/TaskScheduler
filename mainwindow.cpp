@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->group_3->setSortingEnabled(true);
     ui->group_4->setSortingEnabled(true);
 
+<<<<<<< HEAD
     ui->stackedWidget->setCurrentIndex(1);
 
     //    if(user.getLoggedin()){
@@ -85,6 +86,70 @@ MainWindow::MainWindow(QWidget *parent)
     //    } else {
 
     //    }
+=======
+    if(user.getLoggedin()){
+
+
+
+    QFile file("../../../data.txt");
+    if (!file.open(QIODevice::ReadWrite))
+    {
+        return;
+    }
+
+    QTextStream stream(&file);
+
+    QString line;
+    while (!stream.atEnd())
+    {
+        line = stream.readLine();
+        if (line == "START")
+            continue;
+        else if (line == "END")
+            break;
+        else if (line == "")
+            continue;
+        else if(line.startsWith("USER")){
+            continue;
+        }
+        else
+        {
+            QStringList pieces = line.split(",");
+
+            this->user.tasks.addTask(pieces.at(0).toStdString(), pieces.at(1).toStdString(), pieces.at(2).toInt(), pieces.at(3).toInt(), pieces.at(4).toStdString(), pieces.at(5).toInt());
+
+            QListWidgetItem *newItem = new QListWidgetItem;
+             newItem->setText(pieces.at(3) + " - " + pieces.at(0));
+//            newItem->setText(pieces.at(0));
+            ui->tasklist->insertItem(0, newItem);
+
+            QListWidgetItem *newItem_2 = new QListWidgetItem;
+             newItem_2->setText(pieces.at(3) + " - " + pieces.at(0));
+//            newItem_2->setText(pieces.at(0));
+
+            switch (pieces.at(2).toInt())
+            {
+            case 1:
+                ui->group_1->insertItem(0, newItem_2);
+                break;
+            case 2:
+                ui->group_2->insertItem(0, newItem_2);
+                break;
+            case 3:
+                ui->group_3->insertItem(0, newItem_2);
+                break;
+            case 4:
+                ui->group_4->insertItem(0, newItem_2);
+                break;
+            }
+        }
+    }
+
+    file.close();
+    } else {
+        ui->stackedWidget->setCurrentIndex(1);
+    }
+>>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))
 
     QFile file("../../../data.txt");
     if (!file.open(QIODevice::ReadOnly))
@@ -116,7 +181,12 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
 
+<<<<<<< HEAD
     //    if(user.getLoggedin()){
+=======
+    if(user.getLoggedin()){
+
+>>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))
 
     QFile file("../../../data.txt");
     if (!file.open(QIODevice::WriteOnly))
@@ -144,9 +214,15 @@ MainWindow::~MainWindow()
            << "END";
 
     file.close();
+<<<<<<< HEAD
     //    } else {
     //        ui->stackedWidget->setCurrentIndex(1);
     //    }
+=======
+    } else {
+        ui->stackedWidget->setCurrentIndex(1);
+    }
+>>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))
 
     user.setLoggedin(false);
     delete ui->login;
@@ -530,7 +606,7 @@ void MainWindow::on_group_4_itemClicked(QListWidgetItem *item)
 
 void MainWindow::on_Login_clicked()
 {
-    if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText() == "" || ui->n->toPlainText() == "")
+    if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText().toInt() == 0 || ui->n->toPlainText().toInt() == 0)
     {
         QMessageBox Msgbox;
         Msgbox.setText("ERROR: REQUIRED FIELDS LEFT EMPTY.");
@@ -611,6 +687,7 @@ void MainWindow::on_Login_clicked()
     }
 }
 
+<<<<<<< HEAD
 void MainWindow::on_log_out_clicked()
 {
     qInfo() << "logout";
@@ -666,3 +743,5 @@ void MainWindow::on_log_out_clicked()
 
     qInfo() << "delete";
 }
+=======
+>>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))

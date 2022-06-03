@@ -38,8 +38,6 @@ private slots:
 
     void on_Login_clicked();
 
-    void on_log_out_clicked();
-
 private:
     Ui::MainWindow *ui;
     User user;
