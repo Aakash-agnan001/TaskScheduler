@@ -29,9 +29,9 @@ We used the strategy pattern, as our algorithms and methods were very similar wi
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- Screenshots of the input/output after running your application
+> Screenshots of the input/output after running your application
  ## Installation/Usage
- > The user installs the program containing the QT and C++ implementaion files, as well as the .csv where their data is stored. The user is prompted for their user name, password and encryption key after clicking the login button. From this point they can interact with the program and create a list of tasks with any of the attributes tied to the classes in the source files. The user can then log out and close the program. 
+ The user installs the program containing the QT and C++ implementaion files, as well as the .csv where their data is stored. The user is prompted for their user name, password and encryption key after clicking the login button. From this point they can interact with the program and create a list of tasks with any of the attributes tied to the classes in the source files. The user can then log out and close the program. 
  ## Testing
  The project was tested through unit tests on all of the fundamental classes (i.e. Information and all it's derivative classes) done through the google tests module and the resolution of errors as they appeared while running the earlier builds.
  
