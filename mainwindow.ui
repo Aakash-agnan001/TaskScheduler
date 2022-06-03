@@ -481,21 +481,19 @@ color: white;border: 1px solid white;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-<<<<<<< HEAD
      <widget class="QPushButton" name="log_out">
-        <property name="geometry">
-         <rect>
-          <x>630</x>
-          <y>790</y>
-          <width>100</width>
-          <height>32</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Log Out</string>
-        </property>
-       </widget>
-=======
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>790</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Log Out</string>
+      </property>
+     </widget>
      <widget class="QLabel" name="titleLabel">
       <property name="geometry">
        <rect>
@@ -587,7 +585,7 @@ color: white;border: 1px solid white;</string>
        <string>Duration:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="DurationInfo_2">
+     <widget class="QLabel" name="DurationInfo">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -652,7 +650,91 @@ color: white;border: 1px solid white;</string>
        <string/>
       </property>
      </widget>
->>>>>>> 49b9f907798968d6454812177c9d1ea3cf34ed30
+     <widget class="QTextEdit" name="username_change">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>700</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+border: 1px solid white;
+color: white;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter Username</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="password_change">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>700</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+border: 1px solid white;
+color: white;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter Password</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="change">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>800</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Change</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="n_change">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>750</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+border: 1px solid white;
+color: white;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter N</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="e_change">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>750</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+border: 1px solid white;
+color: white;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter E</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="main">
      <widget class="QPushButton" name="Login">
@@ -665,11 +747,11 @@ color: white;border: 1px solid white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-        <string notr="true">background-color: rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(0, 0, 0);
  border-color: rgb(255, 255, 255);
  border: solid;
  color: white;border: 1px solid white;</string>
-       </property>
+      </property>
       <property name="text">
        <string>Login</string>
       </property>
@@ -697,11 +779,11 @@ color: white;border: 1px solid white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-        <string notr="true">background-color: rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(0, 0, 0);
  border-color: rgb(255, 255, 255);
  border: solid;
  color: white;border: 1px solid white;</string>
-       </property>
+      </property>
       <property name="placeholderText">
        <string>Enter Password</string>
       </property>
@@ -716,11 +798,11 @@ color: white;border: 1px solid white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-        <string notr="true">background-color: rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(0, 0, 0);
  border-color: rgb(255, 255, 255);
  border: solid;
  color: white;border: 1px solid white;</string>
-       </property>
+      </property>
       <property name="placeholderText">
        <string>Enter Decoder (1649)</string>
       </property>
@@ -735,11 +817,11 @@ color: white;border: 1px solid white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-        <string notr="true">background-color: rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(0, 0, 0);
  border-color: rgb(255, 255, 255);
  border: solid;
  color: white;border: 1px solid white;</string>
-       </property>
+      </property>
       <property name="placeholderText">
        <string>Enter 5</string>
       </property>
@@ -777,7 +859,7 @@ color: white;border: 1px solid white;</string>
      <x>0</x>
      <y>0</y>
      <width>1399</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

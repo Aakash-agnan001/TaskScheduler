@@ -23,7 +23,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->group_3->setSortingEnabled(true);
     ui->group_4->setSortingEnabled(true);
 
-<<<<<<< HEAD
     ui->stackedWidget->setCurrentIndex(1);
 
     //    if(user.getLoggedin()){
@@ -86,70 +85,6 @@ MainWindow::MainWindow(QWidget *parent)
     //    } else {
 
     //    }
-=======
-    if(user.getLoggedin()){
-
-
-
-    QFile file("../../../data.txt");
-    if (!file.open(QIODevice::ReadWrite))
-    {
-        return;
-    }
-
-    QTextStream stream(&file);
-
-    QString line;
-    while (!stream.atEnd())
-    {
-        line = stream.readLine();
-        if (line == "START")
-            continue;
-        else if (line == "END")
-            break;
-        else if (line == "")
-            continue;
-        else if(line.startsWith("USER")){
-            continue;
-        }
-        else
-        {
-            QStringList pieces = line.split(",");
-
-            this->user.tasks.addTask(pieces.at(0).toStdString(), pieces.at(1).toStdString(), pieces.at(2).toInt(), pieces.at(3).toInt(), pieces.at(4).toStdString(), pieces.at(5).toInt());
-
-            QListWidgetItem *newItem = new QListWidgetItem;
-             newItem->setText(pieces.at(3) + " - " + pieces.at(0));
-//            newItem->setText(pieces.at(0));
-            ui->tasklist->insertItem(0, newItem);
-
-            QListWidgetItem *newItem_2 = new QListWidgetItem;
-             newItem_2->setText(pieces.at(3) + " - " + pieces.at(0));
-//            newItem_2->setText(pieces.at(0));
-
-            switch (pieces.at(2).toInt())
-            {
-            case 1:
-                ui->group_1->insertItem(0, newItem_2);
-                break;
-            case 2:
-                ui->group_2->insertItem(0, newItem_2);
-                break;
-            case 3:
-                ui->group_3->insertItem(0, newItem_2);
-                break;
-            case 4:
-                ui->group_4->insertItem(0, newItem_2);
-                break;
-            }
-        }
-    }
-
-    file.close();
-    } else {
-        ui->stackedWidget->setCurrentIndex(1);
-    }
->>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))
 
     QFile file("../../../data.txt");
     if (!file.open(QIODevice::ReadOnly))
@@ -181,12 +116,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
 
-<<<<<<< HEAD
     //    if(user.getLoggedin()){
-=======
-    if(user.getLoggedin()){
-
->>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))
 
     QFile file("../../../data.txt");
     if (!file.open(QIODevice::WriteOnly))
@@ -214,15 +144,9 @@ MainWindow::~MainWindow()
            << "END";
 
     file.close();
-<<<<<<< HEAD
     //    } else {
     //        ui->stackedWidget->setCurrentIndex(1);
     //    }
-=======
-    } else {
-        ui->stackedWidget->setCurrentIndex(1);
-    }
->>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))
 
     user.setLoggedin(false);
     delete ui->login;
@@ -540,7 +464,7 @@ void MainWindow::autofill(QListWidgetItem *item)
             ui->DescriptionInfo->setText(QString::fromStdString((*ptr).description.getInfo("")));
             ui->ClassificationInfo->setText(QString::number((*ptr).classification.getInfo(1)));
             ui->PriorityInfo->setText(QString::number((*ptr).priority.getInfo(1)));
-            ui->DurationInfo_2->setText(QString::number((*ptr).duration.getInfo(1)));
+            ui->DurationInfo->setText(QString::number((*ptr).duration.getInfo(1)));
             ui->DueInfo->setText(QString::fromStdString((*ptr).date.getInfo("")));
         }
     }
@@ -560,6 +484,13 @@ void MainWindow::on_addNew_clicked()
     ui->addTaskInputPriority->setText("");
     ui->addTaskInputDuration->setText("");
     ui->addTaskInputDuedate->setText("");
+
+    ui->titleInfo->setText("");
+    ui->DescriptionInfo->setText("");
+    ui->ClassificationInfo->setText("");
+    ui->PriorityInfo->setText("");
+    ui->DurationInfo->setText("");
+    ui->DueInfo->setText("");
 
     QList<QListWidgetItem *> selected_items = ui->tasklist->selectedItems();
     for (int i = 0; i < selected_items.count(); ++i)
@@ -614,7 +545,7 @@ void MainWindow::on_group_4_itemClicked(QListWidgetItem *item)
 
 void MainWindow::on_Login_clicked()
 {
-    if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText().toInt() == 0 || ui->n->toPlainText().toInt() == 0)
+    if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText() == "" || ui->n->toPlainText() == "")
     {
         QMessageBox Msgbox;
         Msgbox.setText("ERROR: REQUIRED FIELDS LEFT EMPTY.");
@@ -628,8 +559,14 @@ void MainWindow::on_Login_clicked()
 
     for (unsigned int i = 0; i < numbers.size(); ++i)
     {
+        if(i == numbers.size() - 1) {
+            password += std::to_string(numbers.at(i));
+            break;
+        }
         password += std::to_string(numbers.at(i)) + " ";
     }
+
+    qInfo() << "after password read";
 
     if (user.getName() == ui->username->toPlainText().toStdString() && password == user.getPassword())
     {
@@ -643,6 +580,8 @@ void MainWindow::on_Login_clicked()
         }
 
         QTextStream stream(&file);
+
+        qInfo() << "after file open";
 
         QString line;
         while (!stream.atEnd())
@@ -691,11 +630,12 @@ void MainWindow::on_Login_clicked()
             }
         }
 
+        qInfo() << "after file stuff";
+
         file.close();
     }
 }
 
-<<<<<<< HEAD
 void MainWindow::on_log_out_clicked()
 {
     qInfo() << "logout";
@@ -751,5 +691,27 @@ void MainWindow::on_log_out_clicked()
 
     qInfo() << "delete";
 }
-=======
->>>>>>> parent of c6cf41d (added push button, but implementation is wrong(duplication))
+
+void MainWindow::on_change_clicked()
+{
+    user.setName(ui->username_change->toPlainText().toStdString());
+
+
+    std::vector<int> numbers = user.encrypt(ui->password_change->toPlainText().toStdString(), ui->e_change->toPlainText().toInt(), ui->n_change->toPlainText().toInt());
+    std::string password = "";
+
+    for (unsigned int i = 0; i < numbers.size(); ++i)
+    {
+        if(i == numbers.size() - 1) {
+            password += std::to_string(numbers.at(i));
+            break;
+        }
+        password += std::to_string(numbers.at(i)) + " ";
+
+    }
+
+    qInfo() <<QString::fromStdString(password);
+
+    user.setPassword(password);
+}
+
