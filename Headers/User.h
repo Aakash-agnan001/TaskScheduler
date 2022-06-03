@@ -54,7 +54,7 @@ public:
     std::vector<int> encrypt(std::string pass, int pub, int n)
     {
         std::vector<int> encrypted;
-        for (int i = 0; i < pass.size(); ++i)
+        for (unsigned long i = 0; i < pass.size(); ++i)
         {
             char ch = pass.at(i);
             int ascii = int(ch);
@@ -69,7 +69,7 @@ public:
     {
         std::string decrypted = "";
 
-        for (int i = 0; i < encrypted.size(); ++i)
+        for (unsigned long i = 0; i < encrypted.size(); ++i)
         {
             int ch = encrypted.at(i);
             // int ascii = int(ch);
