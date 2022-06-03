@@ -440,6 +440,13 @@ void MainWindow::autofill(QListWidgetItem *item)
             ui->addTaskInputPriority->setText(QString::number((*ptr).priority.getInfo(1)));
             ui->addTaskInputDuration->setText(QString::number((*ptr).duration.getInfo(1)));
             ui->addTaskInputDuedate->setText(QString::fromStdString((*ptr).date.getInfo("")));
+
+            ui->titleInfo->setText(QString::fromStdString((*ptr).title.getInfo("")));
+            ui->DescriptionInfo->setText(QString::fromStdString((*ptr).description.getInfo("")));
+            ui->ClassificationInfo->setText(QString::number((*ptr).classification.getInfo(1)));
+            ui->PriorityInfo->setText(QString::number((*ptr).priority.getInfo(1)));
+            ui->DurationInfo_2->setText(QString::number((*ptr).duration.getInfo(1)));
+            ui->DueInfo->setText(QString::fromStdString((*ptr).date.getInfo("")));
         }
     }
 
@@ -447,6 +454,7 @@ void MainWindow::autofill(QListWidgetItem *item)
 
 void MainWindow::on_tasklist_itemClicked(QListWidgetItem *item)
 {
+    //for(int i = 0; i < ui->tasklist->
     autofill(item);
 }
 
