@@ -20,14 +20,14 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
+      <x>80</x>
+      <y>-40</y>
       <width>1301</width>
       <height>861</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QLabel" name="WolcomeLabel">
@@ -120,7 +120,7 @@ color: white;border: 1px solid white;</string>
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>600</y>
+        <y>620</y>
         <width>121</width>
         <height>131</height>
        </rect>
@@ -134,7 +134,7 @@ color: white;border: 1px solid white;</string>
       <property name="geometry">
        <rect>
         <x>240</x>
-        <y>600</y>
+        <y>620</y>
         <width>121</width>
         <height>131</height>
        </rect>
@@ -148,7 +148,7 @@ color: white;border: 1px solid white;</string>
       <property name="geometry">
        <rect>
         <x>400</x>
-        <y>600</y>
+        <y>620</y>
         <width>121</width>
         <height>131</height>
        </rect>
@@ -162,7 +162,7 @@ color: white;border: 1px solid white;</string>
       <property name="geometry">
        <rect>
         <x>560</x>
-        <y>600</y>
+        <y>630</y>
         <width>121</width>
         <height>131</height>
        </rect>
@@ -328,8 +328,8 @@ color: white;border: 1px solid white;</string>
      <widget class="QLabel" name="WolcomeLabel_4">
       <property name="geometry">
        <rect>
-        <x>860</x>
-        <y>530</y>
+        <x>850</x>
+        <y>510</y>
         <width>361</width>
         <height>61</height>
        </rect>
@@ -353,7 +353,7 @@ color: white;border: 1px solid white;</string>
       <property name="geometry">
        <rect>
         <x>800</x>
-        <y>600</y>
+        <y>570</y>
         <width>461</width>
         <height>41</height>
        </rect>
@@ -371,7 +371,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>800</x>
-        <y>650</y>
+        <y>620</y>
         <width>461</width>
         <height>32</height>
        </rect>
@@ -388,22 +388,22 @@ color: white;border: 1px solid white;</string>
      <widget class="QLabel" name="WolcomeLabel_5">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>610</y>
-        <width>31</width>
+        <x>70</x>
+        <y>560</y>
+        <width>131</width>
         <height>61</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>40</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>1</string>
+       <string>School</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -412,22 +412,22 @@ color: white;border: 1px solid white;</string>
      <widget class="QLabel" name="WolcomeLabel_6">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>610</y>
-        <width>31</width>
+        <x>350</x>
+        <y>560</y>
+        <width>221</width>
         <height>61</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>40</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>3</string>
+       <string>Assignments</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -436,22 +436,22 @@ color: white;border: 1px solid white;</string>
      <widget class="QLabel" name="WolcomeLabel_7">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>610</y>
-        <width>31</width>
+        <x>230</x>
+        <y>560</y>
+        <width>141</width>
         <height>61</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>40</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>2</string>
+       <string>Work</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -460,22 +460,22 @@ color: white;border: 1px solid white;</string>
      <widget class="QLabel" name="WolcomeLabel_8">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>610</y>
-        <width>31</width>
+        <x>560</x>
+        <y>560</y>
+        <width>121</width>
         <height>61</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>40</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>4</string>
+       <string>Life</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -512,7 +512,7 @@ color: white;border: 1px solid white;</string>
        <rect>
         <x>410</x>
         <y>270</y>
-        <width>58</width>
+        <width>261</width>
         <height>16</height>
        </rect>
       </property>
@@ -642,7 +642,7 @@ color: white;border: 1px solid white;</string>
        <rect>
         <x>410</x>
         <y>540</y>
-        <width>58</width>
+        <width>251</width>
         <height>16</height>
        </rect>
       </property>
@@ -735,6 +735,30 @@ color: white;</string>
        <string>Enter E</string>
       </property>
      </widget>
+     <widget class="QLabel" name="WolcomeLabel_10">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>640</y>
+        <width>471</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Change Username and Password</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="main">
      <widget class="QPushButton" name="Login">
@@ -804,7 +828,7 @@ color: white;</string>
  color: white;border: 1px solid white;</string>
       </property>
       <property name="placeholderText">
-       <string>Enter Decoder (1649)</string>
+       <string>Enter Encryption Key (n)</string>
       </property>
      </widget>
      <widget class="QTextEdit" name="e">
@@ -823,7 +847,7 @@ color: white;</string>
  color: white;border: 1px solid white;</string>
       </property>
       <property name="placeholderText">
-       <string>Enter 5</string>
+       <string>Enter Encryption Key (e)</string>
       </property>
      </widget>
      <widget class="QLabel" name="WolcomeLabel_9">

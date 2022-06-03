@@ -86,7 +86,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     //    }
 
-    QFile file("../../../data.txt");
+//    QFile file("../../../data.txt");
+    QFile file("/Users/shahdivyank/Documents/final-project-error-404/data.txt");
     if (!file.open(QIODevice::ReadOnly))
     {
         return;
@@ -118,7 +119,8 @@ MainWindow::~MainWindow()
 
     //    if(user.getLoggedin()){
 
-    QFile file("../../../data.txt");
+//    QFile file("../../../data.txt");
+    QFile file("/Users/shahdivyank/Documents/final-project-error-404/data.txt");
     if (!file.open(QIODevice::WriteOnly))
     {
         return;
@@ -573,7 +575,8 @@ void MainWindow::on_Login_clicked()
         user.setLoggedin(true);
         ui->stackedWidget->setCurrentIndex(0);
 
-        QFile file("../../../data.txt");
+//        QFile file("../../../data.txt");
+        QFile file("/Users/shahdivyank/Documents/final-project-error-404/data.txt");
         if (!file.open(QIODevice::ReadWrite))
         {
             return;
@@ -639,7 +642,8 @@ void MainWindow::on_Login_clicked()
 void MainWindow::on_log_out_clicked()
 {
     qInfo() << "logout";
-    QFile file("../../../data.txt");
+//    QFile file("../../../data.txt");
+    QFile file("/Users/shahdivyank/Documents/final-project-error-404/data.txt");
     if (!file.open(QIODevice::ReadWrite))
     {
         return;
