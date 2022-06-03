@@ -24,68 +24,71 @@ MainWindow::MainWindow(QWidget *parent)
     ui->group_3->setSortingEnabled(true);
     ui->group_4->setSortingEnabled(true);
 
-    if(user.getLoggedin()){
+    ui->stackedWidget->setCurrentIndex(1);
+
+//    if(user.getLoggedin()){
 
 
 
-    QFile file("../../../data.txt");
-    if (!file.open(QIODevice::ReadWrite))
-    {
-        return;
-    }
+//    QFile file("../../../data.txt");
+//    if (!file.open(QIODevice::ReadWrite))
+//    {
+//        return;
+//    }
 
-    QTextStream stream(&file);
+//    QTextStream stream(&file);
 
-    QString line;
-    while (!stream.atEnd())
-    {
-        line = stream.readLine();
-        if (line == "START")
-            continue;
-        else if (line == "END")
-            break;
-        else if (line == "")
-            continue;
-        else if(line.startsWith("USER")){
-            continue;
-        }
-        else
-        {
-            QStringList pieces = line.split(",");
 
-            this->user.tasks.addTask(pieces.at(0).toStdString(), pieces.at(1).toStdString(), pieces.at(2).toInt(), pieces.at(3).toInt(), pieces.at(4).toStdString(), pieces.at(5).toInt());
+    //    QString line;
+    //    while (!stream.atEnd())
+    //    {
+    //        line = stream.readLine();
+    //        if (line == "START")
+    //            continue;
+    //        else if (line == "END")
+    //            break;
+    //        else if (line == "")
+    //            continue;
+    //        else if(line.startsWith("USER")){
+    //            continue;
+    //        }
+    //        else
+    //        {
+    //            QStringList pieces = line.split(",");
 
-            QListWidgetItem *newItem = new QListWidgetItem;
-             newItem->setText(pieces.at(3) + " - " + pieces.at(0));
-//            newItem->setText(pieces.at(0));
-            ui->tasklist->insertItem(0, newItem);
+    //            this->user.tasks.addTask(pieces.at(0).toStdString(), pieces.at(1).toStdString(), pieces.at(2).toInt(), pieces.at(3).toInt(), pieces.at(4).toStdString(), pieces.at(5).toInt());
 
-            QListWidgetItem *newItem_2 = new QListWidgetItem;
-             newItem_2->setText(pieces.at(3) + " - " + pieces.at(0));
-//            newItem_2->setText(pieces.at(0));
+    //            QListWidgetItem *newItem = new QListWidgetItem;
+    //             newItem->setText(pieces.at(3) + " - " + pieces.at(0));
+    ////            newItem->setText(pieces.at(0));
+    //            ui->tasklist->insertItem(0, newItem);
 
-            switch (pieces.at(2).toInt())
-            {
-            case 1:
-                ui->group_1->insertItem(0, newItem_2);
-                break;
-            case 2:
-                ui->group_2->insertItem(0, newItem_2);
-                break;
-            case 3:
-                ui->group_3->insertItem(0, newItem_2);
-                break;
-            case 4:
-                ui->group_4->insertItem(0, newItem_2);
-                break;
-            }
-        }
-    }
+    //            QListWidgetItem *newItem_2 = new QListWidgetItem;
+    //             newItem_2->setText(pieces.at(3) + " - " + pieces.at(0));
+    ////            newItem_2->setText(pieces.at(0));
 
-    file.close();
-    } else {
-        ui->stackedWidget->setCurrentIndex(1);
-    }
+    //            switch (pieces.at(2).toInt())
+    //            {
+    //            case 1:
+    //                ui->group_1->insertItem(0, newItem_2);
+    //                break;
+    //            case 2:
+    //                ui->group_2->insertItem(0, newItem_2);
+    //                break;
+    //            case 3:
+    //                ui->group_3->insertItem(0, newItem_2);
+    //                break;
+    //            case 4:
+    //                ui->group_4->insertItem(0, newItem_2);
+    //                break;
+    //            }
+    //        }
+    //    }
+
+    //    file.close();
+//    } else {
+
+//    }
 
 QFile file("../../../data.txt");
     if (!file.open(QIODevice::ReadWrite))
@@ -115,7 +118,7 @@ QFile file("../../../data.txt");
 MainWindow::~MainWindow()
 {
 
-    if(user.getLoggedin()){
+//    if(user.getLoggedin()){
 
 
     QFile file("../../../data.txt");
@@ -144,9 +147,9 @@ MainWindow::~MainWindow()
            << "END";
 
     file.close();
-    } else {
-        ui->stackedWidget->setCurrentIndex(1);
-    }
+//    } else {
+//        ui->stackedWidget->setCurrentIndex(1);
+//    }
 
     user.setLoggedin(false);
     delete ui->login;
@@ -512,7 +515,7 @@ void MainWindow::on_group_4_itemClicked(QListWidgetItem *item)
 
 void MainWindow::on_Login_clicked()
 {
-    if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText().toInt() == 0 || ui->n->toPlainText().toInt() == 0)
+    if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText() == "" || ui->n->toPlainText() == "")
     {
       QMessageBox Msgbox;
         Msgbox.setText("ERROR: REQUIRED FIELDS LEFT EMPTY.");
@@ -588,5 +591,77 @@ void MainWindow::on_Login_clicked()
 
         file.close();
     }
+}
+
+
+void MainWindow::on_log_out_clicked()
+{
+
+    QFile file("../../../data.txt");
+    if (!file.open(QIODevice::ReadWrite))
+    {
+        return;
+    }
+
+    file.resize(0);
+    QTextStream stream(&file);
+
+    std::list<Task>::iterator ptr;
+
+    stream << "START"
+           << "\n\n";
+
+    stream << "USER," << QString::fromStdString(user.getName()) << "," << QString::fromStdString(user.getPassword()) << "\n\n";
+
+    for (ptr = user.tasks.tasks.begin(); ptr != user.tasks.tasks.end(); ++ptr)
+    {
+
+        stream << QString::fromStdString((*ptr).title.getInfo("")) << "," << QString::fromStdString((*ptr).description.getInfo("")) << "," << QString::number((*ptr).classification.getInfo(1)) << "," << QString::number((*ptr).priority.getInfo(1)) << "," << QString::fromStdString((*ptr).date.getInfo("")) << "," << QString::number((*ptr).duration.getInfo(1)) << "\n";
+    }
+
+    //added code to try to stop duplication
+
+    ptr = user.tasks.tasks.begin();
+    for(; ptr != user.tasks.tasks.end(); ++ptr) {
+        user.tasks.deleteTask((*ptr).title.getInfo(""));
+    }
+
+
+    stream << "\n"
+           << "END";
+
+    file.close();
+//    } else {
+
+//    }
+
+    user.setLoggedin(false);
+
+
+    for(int i = 0; i < ui->tasklist->count(); ++i) {
+        delete ui->tasklist->item(i);
+    }
+    for(int i = 0; i < ui->group_1->count(); i++) {
+        delete ui->group_1->item(i);
+    }
+    for(int i = 0; i < ui->group_2->count(); i++) {
+        delete ui->group_2->item(i);
+    }
+    for(int i = 0; i < ui->group_3->count(); i++) {
+        delete ui->group_3->item(i);
+    }
+    for(int i = 0; i < ui->group_4->count(); i++) {
+        delete ui->group_4->item(i);
+    }
+
+    ui->addTaskInputTitle->setText("");
+    ui->addTaskInputDescription->setText("");
+    ui->addTaskInputClassification->setText("");
+    ui->addTaskInputPriority->setText("");
+    ui->addTaskInputDuration->setText("");
+    ui->addTaskInputDuedate->setText("");
+    user.setLoggedin(false);
+//    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
