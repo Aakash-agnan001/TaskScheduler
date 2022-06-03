@@ -125,12 +125,28 @@ MainWindow::~MainWindow()
     }
 
     user.setLoggedin(false);
-    delete ui->centralwidget;
-    delete ui->stackedWidget;
     delete ui->login;
     delete ui->WolcomeLabel;
     delete ui->WolcomeLabel_3;
     delete ui->WolcomeLabel_2;
+
+    // Delete variables inside taskList and classification widgets
+    for(int i = 0; i < ui->tasklist->count(); ++i) {
+        delete ui->tasklist->item(i);
+    }
+    for(int i = 0; i < ui->group_1->count(); i++) {
+        delete ui->group_1->item(i);
+    }
+    for(int i = 0; i < ui->group_2->count(); i++) {
+        delete ui->group_2->item(i);
+    }
+    for(int i = 0; i < ui->group_3->count(); i++) {
+        delete ui->group_3->item(i);
+    }
+    for(int i = 0; i < ui->group_4->count(); i++) {
+        delete ui->group_4->item(i);
+    }
+
     delete ui->tasklist;
     delete ui->group_1;
     delete ui->group_2;
@@ -143,7 +159,7 @@ MainWindow::~MainWindow()
     delete ui->addTaskInputDuration;
     delete ui->addTaskInputClassification;
     delete ui->addTaskInputDuedate;
-    delete ui->addTask
+    delete ui->addTask;
     delete ui->WolcomeLabel_4;
     delete ui->deleteTaskInput;
     delete ui->deleteTask;
@@ -152,7 +168,6 @@ MainWindow::~MainWindow()
     delete ui->WolcomeLabel_7;
     delete ui->WolcomeLabel_8;
     delete ui->main;
-    delete ui->Login;
     delete ui->username;
     delete ui->password;
     delete ui->n;
@@ -160,6 +175,9 @@ MainWindow::~MainWindow()
     delete ui->WolcomeLabel_9;
     delete ui->menubar;
     delete ui->statusbar;
+    delete ui->Login;
+    delete ui->stackedWidget;
+    delete ui->centralwidget;
     delete ui;
 }
 
