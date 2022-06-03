@@ -86,6 +86,30 @@ MainWindow::MainWindow(QWidget *parent)
     } else {
         ui->stackedWidget->setCurrentIndex(1);
     }
+
+QFile file("../../../data.txt");
+    if (!file.open(QIODevice::ReadWrite))
+    {
+        return;
+    }
+    QTextStream stream(&file);
+
+
+    QString line;
+    while (!stream.atEnd())
+    {
+        line = stream.readLine();
+        if (line == "START" || line == "")
+            continue;
+        else if(line.startsWith("USER")){
+            user.setName(line.split(",").at(1).toStdString());
+
+            std::string encryption = line.split(",").at(2).toStdString();
+
+            user.setPassword(encryption);
+            break;
+        }
+    }
 }
 
 MainWindow::~MainWindow()
@@ -488,39 +512,14 @@ void MainWindow::on_group_4_itemClicked(QListWidgetItem *item)
 
 void MainWindow::on_Login_clicked()
 {
-    QFile file("../../../data.txt");
-    if (!file.open(QIODevice::ReadWrite))
-    {
-        return;
-    }
-    QTextStream stream(&file);
-
-
-    QString line;
-    while (!stream.atEnd())
-    {
-        line = stream.readLine();
-        if (line == "START" || line == "")
-            continue;
-        else if(line.startsWith("USER")){
-            user.setName(line.split(",").at(1).toStdString());
-
-            std::string encryption = line.split(",").at(2).toStdString();
-
-            user.setPassword(encryption);
-            break;
-        }
-    }
-
-    QMessageBox Msgbox;
-
     if (ui->password->toPlainText().toStdString() == "" || ui->e->toPlainText().toInt() == 0 || ui->n->toPlainText().toInt() == 0)
     {
+      QMessageBox Msgbox;
         Msgbox.setText("ERROR: REQUIRED FIELDS LEFT EMPTY.");
         Msgbox.exec();
         return;
     }
-    
+
     //e = 5, n = 1649
     std::vector<int> numbers = user.encrypt(ui->password->toPlainText().toStdString(), ui->e->toPlainText().toInt(), ui->n->toPlainText().toInt());
     std::string password = "";
