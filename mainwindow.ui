@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QLabel" name="WolcomeLabel">
@@ -581,7 +581,7 @@ color: white;border: 1px solid white;</string>
      <x>0</x>
      <y>0</y>
      <width>1399</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
